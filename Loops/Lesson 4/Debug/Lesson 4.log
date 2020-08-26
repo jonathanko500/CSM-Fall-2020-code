@@ -1,0 +1,3 @@
+﻿  Loop.cpp
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\Loops\Lesson 4\Loop.cpp(22,37): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Lesson 4.vcxproj -> C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\Loops\Debug\Lesson 4.exe
