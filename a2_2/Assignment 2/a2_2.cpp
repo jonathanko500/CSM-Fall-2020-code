@@ -1,11 +1,31 @@
+/*
+Jonathan Ko
+9/1/2020
+CIS 278
+Assignment 2
+
+This program runs the card game blackjack.
+
+The compiler starts of by showing the user 2 randomized numbers (cards), adds and displays the sum total of the two numbers, then asks the user if another number should be added.
+
+If the user says yes, then the compiler gives another randomized number. That added number is also added to the total of all numbers given to the user.
+The user is always asked if another card is wanted. This keeps getting repeated until either the total becomes 21 or more.
+
+If the user says no, then the compiler stops asking to add another number or not.
+
+After the compiler stops adding numbers, the compiler will display one of three messages
+If the total sum of all the added numbers is less then 21, a message will display the total.
+If the total sum of all the added numbers is exactly 21, a message will display "You finihsed with a blackjack."
+If the total sum of all the added numbers is greater then 21, a message will display "You finihsed with a bust."
+*/
+
+
+
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
 using namespace std;
-/*
-* assignment 2
-* blackjack
-*/
+
 const string result1 = "Blackjack";
 const string result2 = "Bust";
 
