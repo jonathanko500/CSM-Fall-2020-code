@@ -2,7 +2,10 @@
 #include <iomanip>
 #include <cstdlib>
 using namespace std;
-
+/*
+* assignment 2
+* blackjack
+*/
 const string result1 = "Blackjack";
 const string result2 = "Bust";
 
