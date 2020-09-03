@@ -32,11 +32,39 @@
 #include <iomanip>
 #include <cstdlib>
 using namespace std;
+const int allHigh = 100;
+const int allLow = 1;
 
 //functions
+void recalc()//function to start reguessing with new ranges
+{//start
+    char again;
+    int high = allHigh;
+    int low = allLow;
+    int mid = allHigh / 2;
+    do
+    {//start loop
+        cout << "My guess is: " << mid;
+        cout << ". Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: ";
+        cin >> again;
+        if (again =='l')
+        {//lower range
+            high = mid;
+            mid = rand() % (high-low) + 1;
+        }
+        if (again == 'h')
+        {//higher range
+            low = mid;
+            mid = rand()% (high - mid) +50;
+        }
+
+    } while (again != 'c');//end loop
+   
+}//end
 void playOneGame()
 {//start
-
+    cout << "Pick a number between 1 and 100." << endl;
+    recalc();
 }//end
 
 
