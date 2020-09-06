@@ -32,8 +32,8 @@
 #include <iomanip>
 #include <cstdlib>
 using namespace std;
-const int allHigh = 100;
-const int allLow = 1;
+int allHigh = 100;
+int allLow = 1;
 
 //functions
 int getMidpoint(int low, int high)
@@ -43,20 +43,34 @@ int getMidpoint(int low, int high)
 }
 void getUserResponseToGuess(int guess, char result)
 {//start
-
+    int high = allHigh;
+    int low = allLow;
+    do
+    {//start loop
+        if (result == 'l')
+        {//lower range
+            high = guess;
+        }
+        if (result == 'h')
+        {//higher range
+            low = guess;
+        }
+        //getUserResponseToGuess(guess, range);
+        guess = getMidpoint(low, high);
+        cout << "My guess is " << guess;
+        cout << ". Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: ";
+        cin >> result;
+    } while (result != 'c');//end loop
 }//end
 void playOneGame()
 {//start
-    char range;//go higher, lower or stop
+    char range;//ask usser to go higher, lower or stop
     int guess = (allHigh + allLow) / 2;//inital guess
-    cout << "Think of a number between 1 and 100" << endl;
-    do
-    {//start loop
-        cout << "My guess is " << guess;
-        cout << ". Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: ";
-        cin >> range;
-        getUserResponseToGuess(guess, range);
-    } while (range != 'c');//end loop
+    cout << "My guess is " << guess;
+    cout << ". Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: ";
+    cin >> range;
+    getUserResponseToGuess(guess, range);
+   
 }//end
 int main()
 {//start main
