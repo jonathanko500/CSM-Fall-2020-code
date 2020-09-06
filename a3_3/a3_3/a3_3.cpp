@@ -69,8 +69,7 @@ void playOneGame()
     cout << "My guess is " << guess;
     cout << ". Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: ";
     cin >> range;
-    getUserResponseToGuess(guess, range);
-   
+    getUserResponseToGuess(guess, range);   
 }//end
 int main()
 {//start main
@@ -87,4 +86,28 @@ int main()
     }//end loop
 }//end main
 
+
+/*output
+Ready to play (y/n)? y
+My guess is 50. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: l
+My guess is 25. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: l
+My guess is 13. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: l
+My guess is 7. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: l
+My guess is 4. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: h
+My guess is 5. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: c
+Great! Do you want to play again (y/n)? y
+My guess is 50. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: h
+My guess is 75. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: h
+My guess is 87. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: h
+My guess is 93. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: h
+My guess is 96. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: h
+My guess is 98. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: c
+Great! Do you want to play again (y/n)? y
+My guess is 50. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: l
+My guess is 25. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: h
+My guess is 37. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: l
+My guess is 31. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: l
+My guess is 28. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: h
+My guess is 29. Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: c
+Great! Do you want to play again (y/n)? n*/
 
