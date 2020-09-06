@@ -36,38 +36,28 @@ const int allHigh = 100;
 const int allLow = 1;
 
 //functions
-void recalc()//function to start reguessing with new ranges
+int getMidpoint(int low, int high)
+{
+    int mid = (low + high) / 2;
+    return mid;
+}
+void getUserResponseToGuess(int guess, char result)
 {//start
-    char again;
-    int high = allHigh;
-    int low = allLow;
-    int mid = allHigh / 2;
-    do
-    {//start loop
-        cout << "My guess is: " << mid;
-        cout << ". Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: ";
-        cin >> again;
-        if (again =='l')
-        {//lower range
-            high = mid;
-            mid = rand() % (high-low) + 1;
-        }
-        if (again == 'h')
-        {//higher range
-            low = mid;
-            mid = rand()% (high - mid) +50;
-        }
 
-    } while (again != 'c');//end loop
-   
 }//end
 void playOneGame()
 {//start
-    cout << "Pick a number between 1 and 100." << endl;
-    recalc();
+    char range;//go higher, lower or stop
+    int guess = (allHigh + allLow) / 2;//inital guess
+    cout << "Think of a number between 1 and 100" << endl;
+    do
+    {//start loop
+        cout << "My guess is " << guess;
+        cout << ". Enter 'l' if your number is lower. Enter 'h' if your number is higher. Enter 'c' if it is correct: ";
+        cin >> range;
+        getUserResponseToGuess(guess, range);
+    } while (range != 'c');//end loop
 }//end
-
-
 int main()
 {//start main
 	srand(static_cast<unsigned>(time(nullptr)));
