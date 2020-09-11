@@ -40,6 +40,7 @@ int main()
 {//start main
 	int hand [NUMBHAND];
 	int card;
+	bool pair;
 	cout << "Enter " << NUMBHAND << " numeric cards, no face cards. Use 2 - 9." << endl;
 	for (int i = 0; i < NUMBHAND; i++)//loop to ask for numbers and make array
 	{//start loop
@@ -47,5 +48,34 @@ int main()
 		cin >> card;
 		hand[i] = card;
 	}//end loop
-	
+	pair = containsPair(hand);
+	if (pair == true)
+	{
+		cout << "You have pair.";
+	}
+	else
+	{
+		cout << "you have high card";
+	}
 }//end main
+
+bool containsPair(const int hand[])
+{//start 	
+	int start = 0;
+	int pair=0;
+	for (int i = 0; i < NUMBHAND; i++)
+	{//start check hand
+		if (hand[start] == hand[i])
+		{
+			pair++;
+		}
+	}//end check hand
+	if (pair != 2)
+	{//return statement
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}//end
