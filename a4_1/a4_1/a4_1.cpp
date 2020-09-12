@@ -35,55 +35,46 @@ bool  containsStraight(const int hand[]);
 bool  containsFullHouse(const int hand[]);
 bool  containsFourOfaKind(const int hand[]);
 
-//helper function
-bool pairCompare(const int hand[], int index);
-
 const int NUMBHAND = 5;
 
 int main()
 {//start main
 	int hand [NUMBHAND];
 	int card;
+	bool check;
 	cout << "Enter " << NUMBHAND << " numeric cards, no face cards. Use 2 - 9." << endl;
 	for (int i = 0; i < NUMBHAND; i++)//loop to ask for numbers and make array
 	{//start loop
 		cout << "Card " << i + 1 << ": ";
 		cin >> card;
 		hand[i] = card;
-	}//end loop
+	}//end loop	
 	if (containsPair(hand))
 	{
-		cout << "you have pair.";
+		cout << "You have a pair";
 	}
 	else
 	{
-		cout << "You have high card";
+		cout << "You have a high card";
 	}
-	
 }//end main
 
-//helper function
-
-
-//required function
 bool containsPair(const int hand[])
 {//start
-	bool pass;
-	for (int i = 0; i < NUMBHAND; i++)
-	{//search through hand
-		for (int j = i + 1; j < NUMBHAND; i++)
-		{//compare cards
-			if (hand[i] != hand[j])
+	for (int i = 0; i < NUMBHAND-1; i++)
+	{//start search
+		for (int j = i + 1; j < NUMBHAND; j++)
+		{//start compare search
+			if (hand[i] == hand[j])
 			{
-				pass = false;
+				return true;
 			}
-			else
-			{
-				pass = true;
-			}
-		}//end comparing
+		}//end compare search
 	}//end search
-	return pass;
+	return false;
 }//end
+
+
+
 
 
