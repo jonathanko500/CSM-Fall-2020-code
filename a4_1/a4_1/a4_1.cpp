@@ -48,7 +48,8 @@ int main()
 		cout << "Card " << i + 1 << ": ";
 		cin >> card;
 		hand[i] = card;
-	}//end loop		
+	}//end loop	
+	//4 > full > straight > 
 	if (containsFourOfaKind(hand) == true)
 	{
 		cout << "You have a four of a kind";
