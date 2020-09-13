@@ -48,31 +48,108 @@ int main()
 		cout << "Card " << i + 1 << ": ";
 		cin >> card;
 		hand[i] = card;
-	}//end loop	
-	if (containsPair(hand))
+	}//end loop		
+	if (containsFourOfaKind(hand) == true)
+	{
+		cout << "You have a four of a kind";
+	}
+	else if (containsThreeOfaKind(hand) == true)
+	{
+		cout << "You have a three of a kind";
+	}
+	else if (containsTwoPair(hand)==true)
+	{
+		cout << "You have two pairs";
+	}	
+	else if (containsPair(hand)==true)
 	{
 		cout << "You have a pair";
-	}
+	}	
 	else
 	{
 		cout << "You have a high card";
 	}
 }//end main
 
+//required funciton
 bool containsPair(const int hand[])
 {//start
 	for (int i = 0; i < NUMBHAND-1; i++)
 	{//start search
 		for (int j = i + 1; j < NUMBHAND; j++)
-		{//start compare search
+		{//start card check
 			if (hand[i] == hand[j])
 			{
 				return true;
 			}
-		}//end compare search
+		}//end card check
 	}//end search
 	return false;
 }//end
+
+bool containsTwoPair(const int hand[])
+{//start
+	int numbPair = 0;
+	for (int i = 0; i < NUMBHAND - 1; i++)
+	{//start search
+		for (int j = i + 1; j < NUMBHAND; j++)
+		{//start card check
+			if (hand[i] == hand[j])
+			{
+				numbPair++;
+			}
+		}//end card check
+	}//end search
+	if (numbPair == 2)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}//end
+
+bool  containsThreeOfaKind(const int hand[])
+{//start
+	for (int i = 0; i < NUMBHAND - 1; i++)
+	{//start search
+		for (int j = i + 1; j < NUMBHAND; j++)
+		{//start card check for 2nd card
+			for (int k = j + 1; k < NUMBHAND ; k++)
+			{//start card check for 3rd card
+				if (hand[i] == hand[j] && hand[i] == hand[k])
+				{
+					return true;
+				}
+			}//end card check for 3rd card
+		}//end card check for 2nd card
+	}//end search
+	return false;
+}//end
+
+bool  containsFourOfaKind(const int hand[])
+{//start
+	for (int i = 0; i < NUMBHAND - 1; i++)
+	{//start search
+		for (int j = i + 1; j < NUMBHAND; j++)
+		{//start card check for 2nd card
+			for (int k = j + 1; k < NUMBHAND; k++)
+			{//start card check for 3rd card
+				for (int x = k + 1; x < NUMBHAND; x++)
+				{//start card check for 4th card
+					if (hand[i] == hand[j] && hand[i] == hand[k] && hand[i]==hand[x])
+					{
+						return true;
+					}
+				}
+				
+			}//end card check for 3rd card
+		}//end card check for 2nd card
+	}//end search
+	return false;
+}//end
+
 
 
 
