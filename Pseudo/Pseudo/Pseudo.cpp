@@ -10,13 +10,14 @@ bool  containsFullHouse(const int hand[]);
 bool  containsFourOfaKind(const int hand[]);
 
 //helper function
-void cardCounterFiller(int count[]);
+void cardCounterZeroFiller(int count[]);
 void cardCounter(int count[], const int hand[]);
 bool cardCounterCheck(int count[], int type);
+bool twoPairCheck(int count[]);
+bool straightCheck(int count[]);
 
 const int NUMBHAND = 5;//hand user gets
 const int TOTALOPTION = 8;//numb of cards allowed to be played (2-9)
-
 
 
 int main()
@@ -32,30 +33,38 @@ int main()
 		hand[i] = card;
 	}//end loop	
 	//4 > full > straight > 3 > 2 pair > pair > high
-	/*if (containsFourOfaKind(hand) == true)
-	{
+	if (containsFourOfaKind(hand) == true)
+	{//4 kind
 		cout << "You have a four of a kind";
 	}
+	else if (containsFullHouse(hand)==true)
+	{//full house
+		cout << "You have a full house";
+	}
+	else if (containsStraight(hand) == true)
+	{//straight
+		cout << "You have a straight";
+	}
 	else if (containsThreeOfaKind(hand) == true)
-	{
+	{//3 kind
 		cout << "You have a three of a kind";
 	}
 	else if (containsTwoPair(hand) == true)
-	{
+	{//2 pair
 		cout << "You have two pairs";
 	}
-	else*/ if (containsPair(hand) == true)
-	{
+	else if (containsPair(hand) == true)
+	{//pair
 		cout << "You have a pair";
 	}
 	else
-	{
+	{//high card
 		cout << "You have a high card";
 	}
 }//end main
 
 //helper function
-void cardCounterFiller(int count[])//makes array all 0
+void cardCounterZeroFiller(int count[])//makes array all 0
 {//start
 	for (int i = 0; i < TOTALOPTION; i++)
 	{
@@ -74,7 +83,7 @@ void cardCounterFiller(int count[])//makes array all 0
 }//end
 void cardCounter(int count[], const int hand[])
 {//start
-	cardCounterFiller(count);
+	cardCounterZeroFiller(count);
 	for (int i = 0; i < NUMBHAND; i++)
 	{//start search through hand
 		/*which element is tracking which number
@@ -86,7 +95,7 @@ void cardCounter(int count[], const int hand[])
 		* count[5]=7
 		* count[6]=8
 		* count[7]=9
-	*/
+		*/
 		if (hand[i] == 2)
 		{//2
 			count[0]++;
@@ -133,6 +142,49 @@ bool cardCounterCheck(int count[], int type)//check for pair, 3 kind, 4 kind
 	}
 	return false;
 }//end
+bool twoPairCheck(int count[])//check hand if there are two pairs
+{//start
+	
+	int numbPair = 0;
+	for (int i = 0; i < TOTALOPTION; i++)
+	{//start counter serach
+		if (count[i] == 2)
+		{//check to see which element is a pair
+			numbPair++;
+		}
+	}//end counter search
+	if (numbPair == 2)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}//else
+bool straightCheck(int count[])
+{//start
+	for (int i = 0; i < TOTALOPTION; i++)
+	{//start counter search
+		/*which element is tracking which number
+		* count[0]=2
+		* count[1]=3
+		* count[2]=4
+		* count[3]=5
+		* count[4]=6
+		* count[5]=7
+		* count[6]=8
+		* count[7]=9
+		 */
+		if (count[i] == 1 && count[i + 1] == 1 && count[i + 2] == 1 && count[i + 3] == 1 && count[i + 4] == 1)
+		{
+			return true;
+		}		
+	}//end counter search
+	return false;
+}//end
+
+//*******************line between types of function***********************
 
 //required funciton
 bool containsPair(const int hand[])
@@ -150,6 +202,60 @@ bool containsTwoPair(const int hand[])
 {//start
 	int count[TOTALOPTION];
 	cardCounter(count, hand);
+	if (twoPairCheck(count) == true)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}//end
 
-	return true;
+bool containsThreeOfaKind(const int hand[])
+{//start
+	int count[TOTALOPTION];
+	cardCounter(count, hand);
+	if (cardCounterCheck(count, 3))
+	{
+		return true;
+	}
+	return false;
+}//end
+
+bool containsFourOfaKind(const int hand[])
+{//start
+	int count[TOTALOPTION];
+	cardCounter(count, hand);
+	if (cardCounterCheck(count, 4))
+	{
+		return true;
+	}
+	return false;
+}//end
+
+bool containsFullHouse(const int hand[])
+{//start
+	if (containsPair(hand) == true && containsThreeOfaKind(hand) == true)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}//end
+
+bool containsStraight(const int hand[])
+{//start
+	int count[TOTALOPTION];
+	cardCounter(count, hand);
+	if (straightCheck(count) == true)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }//end
