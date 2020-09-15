@@ -21,7 +21,7 @@ void displayData(const string names[], const int scores[], int size);
 
 //helper functions
 int bigFind(int scores[], int size, int inital);
-void nameSwap(string names[], int scores[], int size, int inital);
+void nameSwap(string names[], int scores[], int size);
 
 const int NUMBPLAYER = 5;
 
@@ -66,64 +66,37 @@ void sortData(string names[], int scores[], int size)//sorts name and score base
     for (int i = 0; i < size-1; i++)
     {//start looking + swapping through array
         swap(scores[bigFind(scores,size,i)], scores[i]);
-        nameSwap(names, scores, size, i);
+        nameSwap(names, scores, size);
     }//end looking/swapping
 }//end
 
 //helper function
-int bigFind(int scores[], int size, int inital)
+int bigFind(int scores[], int size, int inital)//find the biggest score 
 {//start
     int start = inital;
     for (int i = start + 1; i < size; i++)
-    {
+    {//look through array
         if (scores[start] < scores[i])
         {
             start = i;
         }
-    }
+    }//end look 
     return start;
 }//end
 
-
-void nameSwap(string names[], int scores[], int size, int inital)
+void nameSwap(string names[], int scores[], int size)
 {//start
-    int change;
-    string temp;
+    string inital, next;
+    int place;
     for (int i = 0; i < size - 1; i++)
-    {//start looking through arrays
-        change = bigFind(scores, size, i);
-        temp = names[i];
-        if (names[i] != temp)
+    {//start look through array
+        place = bigFind(scores, size, i);
+        inital = names[i];
+        next = names[place];
+        if (i < place)
         {
-            names[i] = temp;
+            names[i] = next;
+            names[place] = inital;
         }
     }
-
 }//end
-
-/*selection sort
-* 
-    void sort(int list[], int numItems)
-    {
-        for (int count = 0; count < numItems - 1; count++){
-            swap(list[indexOfSmallest(list, count, numItems)],list[count]);
-        }
-
-    }
-
-
-    int indexOfSmallest(const int list[], int startingIndex, int numItems)
-    {
-        int targetIndex = startingIndex;
-    
-        for (int i = startingIndex + 1; i < numItems; i++){
-            if (list[i] < list[targetIndex]){
-                targetIndex = count;
-            }
-        }
-    
-        return targetIndex;
-    }
-
-
-    */
