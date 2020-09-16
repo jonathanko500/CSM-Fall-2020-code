@@ -21,7 +21,7 @@ void displayData(const string names[], const int scores[], int size);
 
 //helper functions
 int bigFind(int scores[], int size, int inital);
-void nameSwap(string names[], int scores[], int size);
+void nameSwap(string names[], int scores[], int sizes);
 
 const int NUMBPLAYER = 5;
 
@@ -65,9 +65,10 @@ void sortData(string names[], int scores[], int size)//sorts name and score base
 {//start
     for (int i = 0; i < size-1; i++)
     {//start looking + swapping through array
-        swap(scores[bigFind(scores,size,i)], scores[i]);
-        swap(names[bigFind(scores, size, i)], names[i]);
+        swap(scores[bigFind(scores,size,i)], scores[i]);        
     }//end looking/swapping
+    nameSwap(names, scores, size);
+    
     
 }//end
 
