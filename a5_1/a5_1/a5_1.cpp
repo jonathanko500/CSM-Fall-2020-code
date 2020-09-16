@@ -66,8 +66,9 @@ void sortData(string names[], int scores[], int size)//sorts name and score base
     for (int i = 0; i < size-1; i++)
     {//start looking + swapping through array
         swap(scores[bigFind(scores,size,i)], scores[i]);
-        nameSwap(names, scores, size);
+        swap(names[bigFind(scores, size, i)], names[i]);
     }//end looking/swapping
+    
 }//end
 
 //helper function
@@ -76,7 +77,7 @@ int bigFind(int scores[], int size, int inital)//find the biggest score
     int start = inital;
     for (int i = start + 1; i < size; i++)
     {//look through array
-        if (scores[start] < scores[i])
+        if (scores[i] > scores[start])
         {
             start = i;
         }
@@ -86,17 +87,5 @@ int bigFind(int scores[], int size, int inital)//find the biggest score
 
 void nameSwap(string names[], int scores[], int size)
 {//start
-    string inital, next;
-    int place;
-    for (int i = 0; i < size - 1; i++)
-    {//start look through array
-        place = bigFind(scores, size, i);
-        inital = names[i];
-        next = names[place];
-        if (i < place)
-        {
-            names[i] = next;
-            names[place] = inital;
-        }
-    }
+    
 }//end
