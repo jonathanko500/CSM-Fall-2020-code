@@ -6,7 +6,13 @@ Assignment 5
 
 This program is called Game Scores Sort
 
-Description
+The compiler asks for a set number of names and scores.
+
+The compiler makes 2 arrays and fills the array with either the names or scores
+
+Then the compiler sorts both arrays based on the score from greatest to least.
+
+After the sort, the compiler displays both sorted arrays.
 
 
 */
@@ -89,7 +95,7 @@ int bigFind(int scores[], int size, int inital)//find the biggest score
 
 void nameSwap(string names[], int scores[], int size)
 {//start
-    for (int i = 0; i < size ; i++)
+    for (int i = 0; i < size; i++)
     {//start look through hand
         for (int j = i + 1; j < size; j++)
         {
