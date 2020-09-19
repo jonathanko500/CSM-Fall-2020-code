@@ -74,8 +74,6 @@ void sortData(string names[], int scores[], int size)//sorts name and score base
         swap(scores[bigFind(scores,size,i)], scores[i]); 
         nameSwap(names, scores, size);
     }//end looking/swapping
-    //nameSwap(names, scores, size);
-    
     
 }//end
 
@@ -109,3 +107,24 @@ void nameSwap(string names[], int scores[], int size)
         }
     }//end look though
 }//end
+
+/*output examples
+Enter the name for score # 1: tom21
+Enter the score for score # 1: 21
+Enter the name for score # 2: jake36
+Enter the score for score # 2: 36
+Enter the name for score # 3: dan92
+Enter the score for score # 3: 92
+Enter the name for score # 4: john20
+Enter the score for score # 4: 20
+Enter the name for score # 5: bob47
+Enter the score for score # 5: 47
+
+Top scores
+tom21: 92
+bob47: 47
+john21: 36
+dan92: 21
+jake36: 20
+
+*/
