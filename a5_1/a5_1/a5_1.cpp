@@ -39,6 +39,10 @@ int main()
 }//end main
 
 
+
+
+
+
 //required functions
 void readData(string names[], int scores[], int size)//ask user for data and then makes compiler process it
 {//start
@@ -58,6 +62,11 @@ void readData(string names[], int scores[], int size)//ask user for data and the
     displayData(names, scores, size);
 }//end
 
+
+
+
+
+
 void displayData(const string names[], const int scores[], int size)//displays both name and score but arragned from highest score to lowest score
 {//start
     cout << "Top scores" << endl;
@@ -67,6 +76,11 @@ void displayData(const string names[], const int scores[], int size)//displays b
     }//end displaying scores
 }//end
 
+
+
+
+
+
 void sortData(string names[], int scores[], int size)//sorts name and score based on highest score to lowest score
 {//start
     for (int i = 0; i < size-1; i++)
@@ -74,11 +88,15 @@ void sortData(string names[], int scores[], int size)//sorts name and score base
         swap(scores[bigFind(scores,size,i)], scores[i]); 
         nameSwap(names, scores, size);
     }//end looking/swapping
-    
 }//end
 
-//helper function
-int bigFind(int scores[], int size, int inital)//find the biggest score 
+
+
+
+
+
+ //helper function
+int bigFind(int scores[], int size, int inital)//find the biggest score within score array
 {//start
     int start = inital;
     for (int i = start + 1; i < size; i++)
@@ -91,14 +109,21 @@ int bigFind(int scores[], int size, int inital)//find the biggest score
     return start;
 }//end
 
-void nameSwap(string names[], int scores[], int size)
+
+
+
+
+
+void nameSwap(string names[], int scores[], int size)//sort name array based off changes in score array
 {//start
+    string origin;
+    string next;
     for (int i = 0; i < size; i++)
     {//start look through hand
         for (int j = i + 1; j < size; j++)
         {
-            string origin = names[i];
-            string next = names[j];
+            origin = names[i];
+            next = names[j];
             if (scores[i] < scores[j])
             {
                 names[i] = next;
