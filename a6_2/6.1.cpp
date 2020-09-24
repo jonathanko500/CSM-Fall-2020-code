@@ -29,17 +29,18 @@ int main() {
     *p1 = 99;
 
     // 5. Using cout and x (not p1), display the value of x.
-    cout << x << endl;
+    cout << "x contians: "<< x << endl;
 
     // 6. Using cout and the pointer p1 (not x), display the value of x.
-    cout << *p1 << endl;
+    cout << "x contians: " << *p1 << endl;
+    cout << "******1-6***********" << endl;
 
     // 7. Store the address of y into p1.
     p1 = &y;
 
     // 8. Use only p1 (not y) to set the value of y to -300.
     *p1 = -300;
-    cout << *p1 << endl;
+    cout << "p1 contians: " << *p1 << endl;
 
     // 9. Create two new variables: an int named temp, and an int pointer named p2. Make p2
     //    point to x.
@@ -47,16 +48,17 @@ int main() {
     int* p2;
 
     p2 = &x;
-    cout << *p2 << endl;
+
+    cout << "p2 contians: " << *p2 << endl;
+    cout << "******7-9***********" << endl;
     // 10. Use only temp, p1, and p2 (not x or y) to swap the values in x and y. (This will take
     //     a few statements.   Don't use a swap function.)
     temp = *p1;
     p1 = p2;
     p2 = &temp;
-
-    cout << *p1 << " " << *p2;
-
-
+    cout << "p1 contians: " << *p1 << endl;
+    cout << "p2 contians: " << *p2 << endl;
+    cout << "******10***********" << endl;
     // 11. Write a function with the following signature: void noNegatives(int *x). The function
     //     should accept the address of an int variable. If the value of this integer is
     //     negative then it should set it to zero.
@@ -64,7 +66,13 @@ int main() {
     //     below main().
     // 12. Invoke the function twice: once with the address of x as the argument, and once with
     //     the address of y.  Use x or y for the argument (not p1 or p2).
-
+    cout << "p1 contains: ";
+    noNegatives(&x);
+    cout << endl;
+    cout << "p2 contains: ";
+    noNegatives(&y);
+    cout << endl;
+    cout << "******11-12***********" << endl;
 
     // 13. Use p2 to display the values in x and y (this will require both assignment statements
     //     and cout statements).  You can use x and y in assignment statements, but not in your
@@ -72,8 +80,7 @@ int main() {
     //
     //     x is: 0
     //     y is: 99
-
-
+    
 
     // 14. Create an int array named 'a' with two elements. Make p2 point to the first element
     //     of a.
@@ -117,15 +124,14 @@ int main() {
 
 } /* end of function main() */
 
-
-    // 11. Write a function with the following signature: void noNegatives(int *x). The function
-    //     should accept the address of an int variable. If the value of this integer is
-    //     negative then it should set it to zero.
-    //     Place the prototype for this function above the main function, and the definition
-    //     below main().
-    // 12. Invoke the function twice: once with the address of x as the argument, and once with
-    //     the address of y.  Use x or y for the argument (not p1 or p2).
 void noNegatives(int* x)
 {//start
-
+    int temp;
+    temp = *x;
+    if (temp < 0)
+    {
+        temp = 0;
+    }
+    cout << temp << endl;
 }//end
+
