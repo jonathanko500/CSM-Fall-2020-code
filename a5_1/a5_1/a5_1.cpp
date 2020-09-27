@@ -36,12 +36,9 @@ int main()
     string player[NUMBPLAYER];
     int score[NUMBPLAYER];
     readData(player, score, NUMBPLAYER);
+    sortData(player, score, NUMBPLAYER);
+    displayData(player, score, NUMBPLAYER);
 }//end main
-
-
-
-
-
 
 //required functions
 void readData(string names[], int scores[], int size)//ask user for data and then makes compiler process it
@@ -58,14 +55,8 @@ void readData(string names[], int scores[], int size)//ask user for data and the
         scores[i] = point;
     }//end loop to get info
     cout << " " << endl;
-    sortData(names, scores, size);
-    displayData(names, scores, size);
+    
 }//end
-
-
-
-
-
 
 void displayData(const string names[], const int scores[], int size)//displays both name and score but arragned from highest score to lowest score
 {//start
@@ -76,24 +67,17 @@ void displayData(const string names[], const int scores[], int size)//displays b
     }//end displaying scores
 }//end
 
-
-
-
-
-
 void sortData(string names[], int scores[], int size)//sorts name and score based on highest score to lowest score
 {//start
+    int big;
     for (int i = 0; i < size-1; i++)
     {//start looking + swapping through array
-        swap(scores[bigFind(scores,size,i)], scores[i]); 
-        nameSwap(names, scores, size);
+        big = bigFind(scores, size, i);
+        swap(names[big], names[i]);
+        swap(scores[big], scores[i]); 
+        
     }//end looking/swapping
 }//end
-
-
-
-
-
 
  //helper function
 int bigFind(int scores[], int size, int inital)//find the biggest score within score array
@@ -110,46 +94,3 @@ int bigFind(int scores[], int size, int inital)//find the biggest score within s
 }//end
 
 
-
-
-
-
-void nameSwap(string names[], int scores[], int size)//sort name array based off changes in score array
-{//start
-    string origin;
-    string next;
-    for (int i = 0; i < size; i++)
-    {//start look through hand
-        for (int j = i + 1; j < size; j++)
-        {
-            origin = names[i];
-            next = names[j];
-            if (scores[i] < scores[j])
-            {
-                names[i] = next;
-                names[j] = origin;
-            }
-        }
-    }//end look though
-}//end
-
-/*output examples
-Enter the name for score # 1: tom21
-Enter the score for score # 1: 21
-Enter the name for score # 2: jake36
-Enter the score for score # 2: 36
-Enter the name for score # 3: dan92
-Enter the score for score # 3: 92
-Enter the name for score # 4: john20
-Enter the score for score # 4: 20
-Enter the name for score # 5: bob47
-Enter the score for score # 5: 47
-
-Top scores
-tom21: 92
-bob47: 47
-john21: 36
-dan92: 21
-jake36: 20
-
-*/
