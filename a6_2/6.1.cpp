@@ -14,7 +14,7 @@ using namespace std;
 void noNegatives(int* x);
 void swap(int* x, int* y);
 
-/*
+
 int main() {
     // 1. Create two integer variables named x and y.
     int x;
@@ -125,7 +125,7 @@ int main() {
     cout << "y contains : " << y << endl;
 
 }//end of function main()
-*/
+
 
 
 void noNegatives(int* x)
