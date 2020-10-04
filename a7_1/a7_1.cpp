@@ -12,9 +12,16 @@ int numLetters(const char* inString);
 
 int main()
 {//start main
-	char str1[] = "Hello";
+	char str1[] = "Hello there";
 	cout << numLetters(str1) << endl;
-	cout << lastIndexOf(str1, 'l') << endl;
+	cout << lastIndexOf(str1, 'e') << endl;
+	toupper(str1);
+	reverse(str1);	
+	for (int i = 0; i < numLetters(str1); i++)
+	{
+		cout << str1[i];
+	}
+	
 }//end main
 
 
@@ -61,3 +68,34 @@ int lastIndexOf(const char* inString, char target)
 
 
 
+/*
+this functions make the string turn into upper case letters
+*/
+void toupper(char* inString)
+{//start
+	char letter;
+	for (int i = 0; i < numLetters(inString); i++)
+	{
+		
+		putchar(toupper(inString[i]));
+	}
+	cout << endl;
+}//end
+
+
+
+
+
+
+/*
+reverse displays the string in reverse order
+*/
+void reverse(char* inString)
+{//start
+	int end = numLetters(inString);
+	for (int i = 0; i < end; i++)
+	{
+		swap(inString[i], inString[end-1]);
+		end--;
+	}
+}//end
