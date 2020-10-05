@@ -1,3 +1,9 @@
 ﻿  a7_1.cpp
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\a7_1.cpp(78,7): warning C4101: 'letter': unreferenced local variable
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\a7_1.cpp(17,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\a7_1.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\a7_1.cpp(44,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\a7_1.cpp(52,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\a7_1.cpp(61,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\a7_1.cpp(129,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\a7_1.cpp(164,20): warning C4018: '<': signed/unsigned mismatch
   a7_1.vcxproj -> C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a7_1\Debug\a7_1.exe
