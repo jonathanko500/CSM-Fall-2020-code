@@ -23,9 +23,6 @@ void displayData(Highscore scores[], int size);
 //helper functions
 int bigFind(Highscore scores[], int size, int inital);
 
-//struct
-struct Highscore;
-
 int main()
 {//start main
     int numb;
@@ -34,10 +31,26 @@ int main()
     Highscore* score = new Highscore[numb];
     
 
-    readData(score, numb);
-    sortData(score, numb);
-    displayData(score, numb);
+    readData(&score, numb);
+    sortData(&score, numb);
+    displayData(&score, numb);
 }//end main
+
+
+
+
+
+/*
+Highscore is a struct that makes a variable that is defined by
+a string for name
+an int for score
+*/
+
+struct Highscore
+{//start
+    string name;
+    int point;
+};//end
 
 
 
@@ -78,12 +91,12 @@ void readData(Highscore scores[], int size)
 * displayData
 * displays both name and score
 */
-void displayData(const string names[], const int scores[], int size)
+void displayData(Highscore scores[], int size)
 {//start
     cout << "Top scores" << endl;
     for (int i = 0; i < size; i++)
     {//start displaying sorted names/scores
-        cout << names[i] << ": " << scores[i] << endl;
+        cout << scores[i].name << ": " << scores[i].point << endl;
     }//end displaying scores
 }//end
 
@@ -102,7 +115,7 @@ void sortData(Highscore scores[], int size)
     int big;
     for (int i = 0; i < size - 1; i++)
     {//start looking + swapping through array
-        big = bigFind(scores, size, i);
+        big = bigFind(&scores, size, i);
         swap(scores[big].name, scores[i].name);
         swap(scores[big].point, scores[i].point);
 
@@ -139,14 +152,3 @@ int bigFind(Highscore scores[], int size, int inital)
 
 
 
-/*
-Highscore is a struct that makes a variable that is defined by
-a string for name
-an int for score
-*/
-
-struct Highscore
-{//start
-    string name;
-    int point;
-};//end

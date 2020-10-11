@@ -1,0 +1,19 @@
+﻿  a8_1.cpp
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(19,15): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(19,25): error C2146: syntax error: missing ')' before identifier 'scores'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(20,15): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(20,25): error C2146: syntax error: missing ')' before identifier 'scores'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(21,18): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(21,28): error C2146: syntax error: missing ')' before identifier 'scores'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(24,13): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(24,23): error C2146: syntax error: missing ')' before identifier 'scores'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,5): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,16): error C2065: 'score': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,37): error C2061: syntax error: identifier 'Highscore'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(34,15): error C2065: 'score': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(34,5): error C3861: 'readData': identifier not found
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(35,15): error C2065: 'score': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(35,5): error C3861: 'sortData': identifier not found
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(36,18): error C2065: 'score': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(36,5): error C3861: 'displayData': identifier not found
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(118,15): error C3861: 'bigFind': identifier not found
