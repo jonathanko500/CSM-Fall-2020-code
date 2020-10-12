@@ -15,12 +15,12 @@ Then the compiler will print the newly sorted arrays.
 #include <iostream>
 using namespace std;
 
-//required function
+//required functions
 void readData(Highscore scores[], int size);
-void sortData(Highscore scores[], int size);
 void displayData(Highscore scores[], int size);
+void sortData(Highscore scores[], int size);
 
-//helper functions
+//helper function
 int bigFind(Highscore scores[], int size, int inital);
 
 int main()
@@ -28,12 +28,15 @@ int main()
     int numb;
     cout << "Enter amount of scores: ";
     cin >> numb;
-    Highscore* score = new Highscore[numb];
+    Highscore* scores = new Highscore[numb];
     
 
-    readData(&score, numb);
-    sortData(&score, numb);
-    displayData(&score, numb);
+    readData(scores, numb);
+    sortData(scores, numb);
+    displayData(scores, numb);
+
+    delete scores;
+
 }//end main
 
 
@@ -64,7 +67,7 @@ struct Highscore
 * readData
 * ask user for data (names and scores) and then makes compiler process it
 */
-void readData(Highscore scores[], int size)
+void readData(Highscore scores[],int size)
 {//start
     int point;
     string name;
@@ -115,7 +118,7 @@ void sortData(Highscore scores[], int size)
     int big;
     for (int i = 0; i < size - 1; i++)
     {//start looking + swapping through array
-        big = bigFind(&scores, size, i);
+        big = bigFind(scores, size, i);
         swap(scores[big].name, scores[i].name);
         swap(scores[big].point, scores[i].point);
 
