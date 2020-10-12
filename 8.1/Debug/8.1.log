@@ -1,15 +1,8 @@
 ﻿  a8_1.cpp
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(19,15): error C2065: 'Highscore': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(19,25): error C2146: syntax error: missing ')' before identifier 'scores'
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(20,18): error C2065: 'Highscore': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(20,28): error C2146: syntax error: missing ')' before identifier 'scores'
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(21,15): error C2065: 'Highscore': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(21,25): error C2146: syntax error: missing ')' before identifier 'scores'
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(24,13): error C2065: 'Highscore': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(24,23): error C2146: syntax error: missing ')' before identifier 'scores'
 C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,5): error C2065: 'Highscore': undeclared identifier
 C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,16): error C2065: 'scores': undeclared identifier
 C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,38): error C2061: syntax error: identifier 'Highscore'
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(38,12): error C2065: 'scores': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(38,18): error C2541: 'delete': cannot delete objects that are not pointers
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(121,15): error C3861: 'bigFind': identifier not found
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(35,9): error C2065: 'scores': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(36,9): error C2065: 'scores': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(37,17): error C2065: 'scores': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(37,44): error C2065: 'scores': undeclared identifier

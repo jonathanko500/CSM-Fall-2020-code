@@ -16,12 +16,12 @@ Then the compiler will print the newly sorted arrays.
 using namespace std;
 
 //required functions
-void readData(Highscore scores[], int size);
-void displayData(Highscore scores[], int size);
-void sortData(Highscore scores[], int size);
+//void readData(Highscore scores[], int size);
+//void displayData(Highscore scores[], int size);
+//void sortData(Highscore scores[], int size);
 
 //helper function
-int bigFind(Highscore scores[], int size, int inital);
+//int bigFind(Highscore scores[], int size, int inital);
 
 int main()
 {//start main
@@ -29,13 +29,13 @@ int main()
     cout << "Enter amount of scores: ";
     cin >> numb;
     Highscore* scores = new Highscore[numb];
-    
+
 
     readData(scores, numb);
     sortData(scores, numb);
     displayData(scores, numb);
 
-    delete scores;
+    //delete scores;
 
 }//end main
 
@@ -67,6 +67,7 @@ struct Highscore
 * readData
 * ask user for data (names and scores) and then makes compiler process it
 */
+/*
 void readData(Highscore scores[],int size)
 {//start
     int point;
@@ -81,9 +82,8 @@ void readData(Highscore scores[],int size)
         scores[i].point = point;
     }//end loop to get info
     cout << " " << endl;
-
 }//end
-
+*/
 
 
 
@@ -94,6 +94,7 @@ void readData(Highscore scores[],int size)
 * displayData
 * displays both name and score
 */
+/*
 void displayData(Highscore scores[], int size)
 {//start
     cout << "Top scores" << endl;
@@ -102,7 +103,7 @@ void displayData(Highscore scores[], int size)
         cout << scores[i].name << ": " << scores[i].point << endl;
     }//end displaying scores
 }//end
-
+*/
 
 
 
@@ -110,9 +111,10 @@ void displayData(Highscore scores[], int size)
 
 
  /*
-* sortData
-* sorts name and score based on highest score to lowest score
+sortData
+ sorts name and score based on highest score to lowest score
 */
+/*
 void sortData(Highscore scores[], int size)
 {//start
     int big;
@@ -124,7 +126,7 @@ void sortData(Highscore scores[], int size)
 
     }//end looking/swapping
 }//end
-
+*/
 
 
 
@@ -136,6 +138,7 @@ void sortData(Highscore scores[], int size)
 * bigFind
 * //find the biggest score within score array
 */
+/*
 int bigFind(Highscore scores[], int size, int inital)
 {//start
     int start = inital;
@@ -148,9 +151,7 @@ int bigFind(Highscore scores[], int size, int inital)
     }//end look 
     return start;
 }//end
-
-
-
+*/
 
 
 
