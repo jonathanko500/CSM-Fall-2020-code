@@ -1,8 +1,0 @@
-﻿  a8_1.cpp
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,5): error C2065: 'Highscore': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,16): error C2065: 'scores': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(31,38): error C2061: syntax error: identifier 'Highscore'
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(35,9): error C2065: 'scores': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(36,9): error C2065: 'scores': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(37,17): error C2065: 'scores': undeclared identifier
-C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\8.1\a8_1.cpp(37,44): error C2065: 'scores': undeclared identifier

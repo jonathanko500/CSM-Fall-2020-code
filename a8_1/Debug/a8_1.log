@@ -1,0 +1,23 @@
+﻿  8_1.cpp
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(19,15): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(19,25): error C2146: syntax error: missing ')' before identifier 'scores'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(20,15): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(20,25): error C2146: syntax error: missing ')' before identifier 'scores'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(21,34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(21,34): error C2146: syntax error: missing ')' before identifier 'scores'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(21,40): error C3646: 'scores': unknown override specifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(21,41): error C2059: syntax error: '['
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(21,41): error C3409: empty attribute block is not allowed
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(21,42): error C2059: syntax error: ','
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(21,52): error C2059: syntax error: ')'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(24,13): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(24,23): error C2146: syntax error: missing ')' before identifier 'scores'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(32,5): error C2065: 'Highscore': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(32,16): error C2065: 'score': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(32,37): error C2061: syntax error: identifier 'Highscore'
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(35,15): error C2065: 'score': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(35,5): error C3861: 'readData': identifier not found
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(36,15): error C2065: 'score': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(36,5): error C3861: 'sortData': identifier not found
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(37,17): error C2065: 'score': undeclared identifier
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a8_1\8_1.cpp(94,15): error C3861: 'bigFind': identifier not found
