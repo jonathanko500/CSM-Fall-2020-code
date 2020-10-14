@@ -15,6 +15,16 @@ Then the compiler will print the newly sorted arrays.
 #include <iostream>
 using namespace std;
 
+
+
+//struct of player's name and score
+struct Highscore
+{//start
+    int pt;
+    string name;
+};//end 
+
+
 //required function
 void readData(Highscore scores[], int size);
 void sortData(Highscore scores[], int size);
@@ -38,16 +48,6 @@ int main()
 
     
 }//end main
-
-
-
-
-//struct of player's name and score
-struct Highscore
-{//start
-    int pt;
-    string name;
-};//end 
 
 
 
@@ -137,3 +137,24 @@ int bigFind(Highscore scores[], int size, int inital)
     }//end look 
     return start;
 }//end
+
+
+
+/*output
+Enter amount of scores: 4
+Enter the name for score # 1: a23
+Enter the score for score # 1: 23
+Enter the name for score # 2: b45
+Enter the score for score # 2: 45
+Enter the name for score # 3: d2
+Enter the score for score # 3: 2
+Enter the name for score # 4: e95
+Enter the score for score # 4: 95
+
+Top scores
+e95: 95
+b45: 45
+a23: 23
+d2: 2
+
+*/
