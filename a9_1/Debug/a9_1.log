@@ -1,0 +1,3 @@
+﻿  a9_1.cpp
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a9_1\a9_1.cpp(126): warning C4715: 'Fraction::isEqualTo': not all control paths return a value
+  a9_1.vcxproj -> C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a9_1\Debug\a9_1.exe
