@@ -2,7 +2,14 @@
 implementation file 
 declare all functions in Fraction.h file
 */
-
+/*
+Class Invariant:
+	a Fraction object has 2 int data members: numerator and denominator
+	Internal operations always result in valid fraction 
+	However, small effort is made to prevent the client from
+	providing an invalid date.
+	Constructor that takes variables crashes when denomintor is trying to be set to 0
+*/
 
 #include <iostream>
 #include "Fraction.h"
@@ -152,3 +159,27 @@ bool Fraction::isEqualTo(Fraction x)
 
 
 
+
+/*
+const overloaded function of multiliedBy
+*/
+const Fraction Fraction::multipliedBy(Fraction x) const
+{//start
+	int t = top * x.top;//numerator
+	int b = bottom * x.bottom;//denominator
+	Fraction multi2(t, b);
+	return multi2;
+}//end
+
+
+
+
+
+
+/*
+const overloaded function of print
+*/
+const void Fraction :: print() const
+{//start
+	cout << top << "/" << bottom;
+}//end

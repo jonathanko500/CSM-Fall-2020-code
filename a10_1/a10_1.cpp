@@ -1,4 +1,23 @@
+/*
+Jonathan Ko
+10/26/2020
+CIS 278
+Assignment #10
 
+This program is called Fraction
+
+With the help of sepperate file classes, the compiler will be able to do basic arithmetic 
+computations with objects being reated as fractions.
+
+These fractions are able to be
+added
+subtracted
+multiplied
+divided
+compared 
+simplified
+
+*/
 /*
 client program
 */
@@ -91,8 +110,8 @@ int main()
 	
 	
 	//more test frac for simplify
-	Fraction f3(12, 8);
-	Fraction f4(202, 303);
+	const Fraction f3(12, 8);
+	const Fraction f4(202, 303);
 	result = f3.multipliedBy(f4);
 	cout << "The product of ";
 	f3.print();
@@ -106,12 +125,14 @@ int main()
 
 /*output
 * 
+The result starts off at 0/1
 fraction f1 is 9/8
 fraction f2 is 2/3
-The product of 9/8 and 2/3 is 18/24
+The product of 9/8 and 2/3 is 3/4
 The quotient of 9/8 and 2/3 is 27/16
 The sum of 9/8 and 2/3 is 43/24
 The difference of 9/8 and 2/3 is 11/24
 The two fractions are equal.
+The product of 3/2 and 2/3 is 1/1
 
 */
