@@ -1,89 +1,158 @@
 #include <iostream>
+
 using namespace std;
 
-//required function
-void readData(Highscore scores[], int size);
-void sortData(Highscore scores[], int size);
-void displayData(Highscore scores[], int size);
-
-
-struct Highscore
-{//start
-    string name;
-    int pt;
-    Highscore();
-};//end
-
-
-//helper functions
-int bigFind(Highscore scores[], int size, int inital);
-
-int main()
-{//start main
-    int numb,size;
-    string name;
-    cout << "Enter amount of scores: ";
-    cin >> size;
-    Highscore* score = new Highscore[size];
-    
-    readData(&score, size);
-    sortData(&score, numb);
-    displayData(&score, numb);
-}//end main
-
-
-
-//required functions
-
-void readData(Highscore scores[], int size)
-{//start
-    int point;
-    string name;
-    for (int i = 0; i < size; i++)
-    {//start loop to get info
-        cout << "Enter the name for score # " << i + 1 << ": ";
-        cin >> name;
-        cout << "Enter the score for score # " << i + 1 << ": ";
-        cin >> point;
-        scores[i].name = name;
-        scores[i].pt = point;
-    }//end loop to get info
-    cout << " " << endl;
-}//end
-
-
-void sortData(Highscore scores[], int size)
-{//start
-    int big;
-    for (int i = 0; i < size - 1; i++)
-    {//start looking + swapping through array
-        big = bigFind(&scores, size, i);
-        swap(scores[big].name, scores[i].name);
-        swap(scores[big].pt, scores[i].pt);
-    }//end looking/swapping
-}//end
-
-void displayData(Highscore scores[], int size)
-{//start
-    cout << "Top scores" << endl;
-    for (int i = 0; i < size; i++)
-    {//start displaying sorted names/scores
-        cout << scores[i].name << ": " << scores[i].pt << endl;
-    }//end displaying scores
-}//end
-
- //helper function
-
-int bigFind(Highscore scores[], int size, int inital)
-{//start
-    int start = inital;
-    for (int i = start + 1; i < size; i++)
-    {//look through array
-        if (scores[i].pt > scores[start].pt)
-        {
-            start = i;
+class Fraction {
+    private:
+        // Calculates the greates common divisor with
+        // Euclid's algorithm
+        // both arguments have to be positive
+        long long gcd(long long a, long long b) {
+            while (a != b) {
+                if (a > b) {
+                    a -= b;
+                } else {
+                    b -= a;
+                }
+            }
+            return a;
         }
-    }//end look 
-    return start;
-}//end
 
+    public:
+        long long numerator, denominator;
+
+        Fraction() {
+            numerator = 0;
+            denominator = 1;
+        }
+
+        Fraction(long long n, long long d) {
+            if (d==0) {
+                cerr << "Denominator may not be 0." << endl;
+                exit(0);
+            } else if (n == 0) {
+                numerator = 0;
+                denominator = 1;
+            } else {
+                int sign = 1;
+                if (n < 0) {
+                    sign *= -1;
+                    n *= -1;
+                }
+                if (d < 0) {
+                    sign *= -1;
+                    d *= -1;
+                }
+
+                long long tmp = gcd(n, d);
+                numerator = n/tmp*sign;
+                denominator = d/tmp;
+            }
+        }
+
+        operator int() {return (numerator)/denominator;}
+        operator float() {return ((float)numerator)/denominator;}
+        operator double() {return ((double)numerator)/denominator;}
+};
+
+Fraction operator+(const Fraction& lhs, const Fraction& rhs) {
+    Fraction tmp(lhs.numerator*rhs.denominator
+                +rhs.numerator*lhs.denominator,
+                lhs.denominator*rhs.denominator);
+    return tmp;
+}
+
+Fraction operator+=(Fraction& lhs, const Fraction& rhs) {
+    Fraction tmp(lhs.numerator*rhs.denominator
+                +rhs.numerator*lhs.denominator,
+                lhs.denominator*rhs.denominator);
+    lhs = tmp;
+    return lhs;
+}
+
+Fraction operator-(const Fraction& lhs, const Fraction& rhs) {
+    Fraction tmp(lhs.numerator*rhs.denominator
+                -rhs.numerator*lhs.denominator,
+                lhs.denominator*rhs.denominator);
+    return tmp;
+}
+
+Fraction operator-=(Fraction& lhs, const Fraction& rhs) {
+    Fraction tmp(lhs.numerator*rhs.denominator
+                -rhs.numerator*lhs.denominator,
+                lhs.denominator*rhs.denominator);
+    lhs = tmp;
+    return lhs;
+}
+
+Fraction operator*(const Fraction& lhs, const Fraction& rhs) {
+    Fraction tmp(lhs.numerator*rhs.numerator,
+               lhs.denominator*rhs.denominator);
+    return tmp;
+}
+
+Fraction operator*=(Fraction& lhs, const Fraction& rhs) {
+    Fraction tmp(lhs.numerator*rhs.numerator,
+               lhs.denominator*rhs.denominator);
+    lhs = tmp;
+    return lhs;
+}
+
+Fraction operator*(int lhs, const Fraction& rhs) {
+    Fraction tmp(lhs*rhs.numerator,rhs.denominator);
+    return tmp;
+}
+
+Fraction operator*(const Fraction& rhs, int lhs) {
+    Fraction tmp(lhs*rhs.numerator,rhs.denominator);
+    return tmp;
+}
+
+Fraction operator/(const Fraction& lhs, const Fraction& rhs) {
+    Fraction tmp(lhs.numerator*rhs.denominator,
+                 lhs.denominator*rhs.numerator);
+    return tmp;
+}
+
+std::ostream& operator<<(std::ostream &strm, const Fraction &a) {
+    if (a.denominator == 1) {
+        strm << a.numerator;
+    } else {
+        strm << a.numerator << "/" << a.denominator;
+    }
+    return strm;
+}
+
+int main() {
+    Fraction a(1,3);
+    Fraction b(3,28);
+    Fraction c;
+
+    c = a + b;
+    cout << c << "\t(should be 37/84)" << endl;
+
+    c = a - b;
+    cout << c << "\t(should be 19/84)" << endl;
+
+    c = a * b;
+    cout << c << "\t(should be 1/28)" << endl;
+
+    c = a / b;
+    cout << c << "\t(should be 28/9)" << endl;
+
+    c = -1 * b;
+    cout << c << "\t(should be -3/28)" << endl;
+
+    c = b * (-1);
+    cout << c << "\t(should be -3/28)" << endl;
+
+    c = Fraction(-100,3);
+    cout <<    (int)c << "\t(should be -33)" << endl;
+    cout <<  (float)c << "\t(should be -33.3...)" << endl;
+    cout << (double)c << "\t(should be -33.3...)" << endl;
+
+    a -= b;
+    cout << a << "\t(should be 19/84)" << endl;
+
+    return 0;
+}
