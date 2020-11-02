@@ -119,8 +119,12 @@ Fraction Fraction :: operator/ (const Fraction x) const
 int main()
 {//start main
 	Fraction x(1,8);
-	Fraction y(8,9);
-	Fraction test;
+	x.print();
+	cout << endl;
+	Fraction y(8);
+	y.print();
+	cout << endl;
+	Fraction test(0,0);
 	//"+" test
 	test = x + y;
 	test.print();
