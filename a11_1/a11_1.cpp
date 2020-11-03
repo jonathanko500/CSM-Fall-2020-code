@@ -14,13 +14,26 @@ public:
 	//constructors
 	Fraction();
 	Fraction(int x = 0, int y = 1);
-	//functions + operators
+	//<<
+	ostream& operator<<(ostream& sign);
 	void print();
+	//operators
 	Fraction operator+ (const Fraction x) const;
 	Fraction operator- (const Fraction x) const;
 	Fraction operator* (const Fraction x) const;
 	Fraction operator/ (const Fraction x) const;
-	Fraction operator+= (const Fraction x) const;
+	//inequality
+	bool operator< (const Fraction x) const;
+	bool operator<= (const Fraction x) const;
+	bool operator> (const Fraction x) const;
+	bool operator>= (const Fraction x) const;
+	bool operator== (const Fraction x) const;
+	bool operator!= (const Fraction x) const;
+	//increment + decrement
+	Fraction operator++();
+	Fraction operator++(int);
+	Fraction operator--();
+	Fraction operator--(int);
 };//end class
 
 
@@ -54,12 +67,20 @@ Fraction::Fraction(int x, int y)
 
 
 
+/*
+ostream& operator<<(ostream& sign)
+{
+	sign << Fraction::top << "/" << bottom;
+	return sign;
+}
+*/
+
+
 
 void Fraction::print()
 {//start
 	cout << top << "/" << bottom;
 }//end
-
 
 
 
@@ -117,23 +138,168 @@ Fraction Fraction :: operator/ (const Fraction x) const
 
 
 
- //overloaded += for Fraction class
-Fraction Fraction :: operator+= (const Fraction x) const
+
+//overloaded < for Fraction class
+bool Fraction :: operator< (const Fraction x) const
 {//start
-	Fraction temp(top, bottom);
-	
+	//convert frac to decimal
+	double og = top / bottom;//decimal of left side
+	double test = x.top / x.bottom;//decimal of right side
+	//test to see which decimal is smaller
+	if (og < test)
+	{
+		return true;
+	}
+}//end
+
+
+
+
+
+
+//overloaded <= for Fraction class
+bool Fraction :: operator<= (const Fraction x) const
+{//start
+	//convert frac to decimal
+	double og = top / bottom;//decimal of left side
+	double test = x.top / x.bottom;//decimal of right side
+	//test to see which decimal is smaller
+	if (og <= test)
+	{
+		return true;
+	}
+}//end
+
+
+
+
+
+
+//overloaded > for Fraction class
+bool Fraction :: operator> (const Fraction x) const
+{//start
+	//convert frac to decimal
+	double og = top / bottom;//decimal of left side
+	double test = x.top / x.bottom;//decimal of right side
+	//test to see which decimal is smaller
+	if (og > test)
+	{
+		return true;
+	}
+}//end
+
+
+
+
+
+
+//overloaded >= for Fraction class
+bool Fraction :: operator>= (const Fraction x) const
+{//start
+	//convert frac to decimal
+	double og = top / bottom;//decimal of left side
+	double test = x.top / x.bottom;//decimal of right side
+	//test to see which decimal is smaller
+	if (og >= test)
+	{
+		return true;
+	}
+}//end
+
+
+
+
+
+
+//overloaded == for Fraction class
+bool Fraction :: operator== (const Fraction x) const
+{//start
+	//convert frac to decimal
+	double og = top / bottom;//decimal of left side
+	double test = x.top / x.bottom;//decimal of right side
+	//test to see which decimal is smaller
+	if (og == test)
+	{
+		return true;
+	}
+}//end
+
+
+
+
+
+
+//overloaded != for Fraction class
+bool Fraction :: operator!= (const Fraction x) const
+{//start
+	//convert frac to decimal
+	double og = top / bottom;//decimal of left side
+	double test = x.top / x.bottom;//decimal of right side
+	//test to see which decimal is smaller
+	if (og != test)
+	{
+		return true;
+	}
+}//end
+
+
+
+
+
+
+//overloaded ++ for Fraction class pre-fix
+Fraction Fraction :: operator++()
+{//start
+	top += bottom;
 	return *this;
 }//end
 
 
 
 
+//overloaded ++ for Fraction class post-fix
+Fraction Fraction :: operator++ (int)
+{//start
+	Fraction temp(top, bottom);
+	top++;
+	return temp;
+}//end
+
+
+
+
+
+
+//overloaded -- for Fraction class pre-fix
+Fraction Fraction :: operator--()
+{//start
+	top -= bottom;
+	return *this;
+}//end
+
+
+
+
+//overloaded -- for Fraction class post-fix
+Fraction Fraction :: operator-- (int)
+{//start
+	Fraction temp(top, bottom);
+	top--;
+	return temp;
+}//end
+
+
+
+
+
+
+
 int main()
 {//start main
-	Fraction x(1,8);
+	Fraction x(1,2);
 	x.print();
 	cout << endl;
-	Fraction y(8,9);
+	Fraction y(1,3);
 	y.print();
 	cout << endl;
 	Fraction test(0,0);
@@ -155,7 +321,88 @@ int main()
 	test = x / y;
 	test.print();
 	cout << endl;
+	//*******
 	//"+=" test
-	x += y;
+	cout << "Inequality testers" << endl;
+	/*
+	x = 1/2
+	y = 1/3
+	*/
+	//"<" tester
 	x.print();
+	cout << " < ";
+	y.print();
+	if (x < y)
+	{
+		cout << " is true"<< endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//"<=" tester
+	x.print();
+	cout << " <= ";
+	y.print();
+	if (x <= y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//">" tester
+	x.print();
+	cout << " > ";
+	y.print();
+	if (x > y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//"<=" tester
+	x.print();
+	cout << " <= ";
+	y.print();
+	if (x >= y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//"==" tester
+	x.print();
+	cout << " == ";
+	y.print();
+	if (x == y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}//"!=" tester
+	x.print();
+	cout << " != ";
+	y.print();
+	if (x != y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//increment/decrement tester
+	y++;
+	y.print();
+	cout << endl;
+	x--;
+	x.print(); cout << endl;
 }//end main
