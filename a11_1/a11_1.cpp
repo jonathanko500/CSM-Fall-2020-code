@@ -20,6 +20,7 @@ public:
 	Fraction operator- (const Fraction x) const;
 	Fraction operator* (const Fraction x) const;
 	Fraction operator/ (const Fraction x) const;
+	Fraction operator+= (const Fraction x) const;
 };//end class
 
 
@@ -28,6 +29,7 @@ public:
 
 
 //declare function + constructor
+
 //default constructor 
 Fraction::Fraction()
 {//start
@@ -62,7 +64,6 @@ void Fraction::print()
 
 
 
-
 //overloaded + for Fraction class
 Fraction Fraction :: operator+ (const Fraction x) const
 {//start
@@ -90,7 +91,7 @@ Fraction Fraction :: operator- (const Fraction x) const
  
  
  
- //overloaded * for Fraction class
+//overloaded * for Fraction class
 Fraction Fraction :: operator* (const Fraction x) const
 {//start
 	Fraction temp(0, 0);
@@ -116,15 +117,28 @@ Fraction Fraction :: operator/ (const Fraction x) const
 
 
 
+ //overloaded += for Fraction class
+Fraction Fraction :: operator+= (const Fraction x) const
+{//start
+	Fraction temp(top, bottom);
+	
+	return *this;
+}//end
+
+
+
+
 int main()
 {//start main
 	Fraction x(1,8);
 	x.print();
 	cout << endl;
-	Fraction y(8);
+	Fraction y(8,9);
 	y.print();
 	cout << endl;
 	Fraction test(0,0);
+	//*****
+	cout << "Math testers" << endl;
 	//"+" test
 	test = x + y;
 	test.print();
@@ -141,4 +155,7 @@ int main()
 	test = x / y;
 	test.print();
 	cout << endl;
+	//"+=" test
+	x += y;
+	x.print();
 }//end main

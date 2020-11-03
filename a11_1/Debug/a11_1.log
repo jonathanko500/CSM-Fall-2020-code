@@ -1,2 +1,3 @@
 ﻿  a11_1.cpp
-  a11_1.vcxproj -> C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a11_1\Debug\a11_1.exe
+a11_1.obj : error LNK2019: unresolved external symbol "public: class Fraction __thiscall Fraction::operator=(class Fraction)const " (??4Fraction@@QBE?AV0@V0@@Z) referenced in function "public: class Fraction __thiscall Fraction::operator+=(class Fraction)const " (??YFraction@@QBE?AV0@V0@@Z)
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a11_1\Debug\a11_1.exe : fatal error LNK1120: 1 unresolved externals
