@@ -2,7 +2,7 @@
 #include <iostream>
 #ifndef FRACTION_H
 #define FRACTION_H
-
+using namespace std;
 
 
 namespace cs_fraction
@@ -39,9 +39,6 @@ namespace cs_fraction
 			Fraction operator++(int);
 			Fraction operator--();
 			Fraction operator--(int);
-
-
-
 	};//end class
 }//end namespace
 #endif
