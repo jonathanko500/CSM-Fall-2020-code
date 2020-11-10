@@ -96,9 +96,7 @@ int main()
 		cout << " is false" << endl;
 	}
 	//"==" tester
-	x.print();
-	cout << " == ";
-	y.print();
+	cout << x << " == " << y;
 	if (x == y)
 	{
 		cout << " is true" << endl;
@@ -107,9 +105,7 @@ int main()
 	{
 		cout << " is false" << endl;
 	}//"!=" tester
-	x.print();
-	cout << " != ";
-	y.print();
+	cout << x << " != " << y;
 	if (x != y)
 	{
 		cout << " is true" << endl;

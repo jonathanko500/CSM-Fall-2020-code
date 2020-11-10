@@ -1,4 +1,12 @@
 //implementation
+/*
+Class Invariant:
+	a Fraction object has 2 int data members: numerator and denominator
+	Internal operations always result in valid fraction
+	However, small effort is made to prevent the client from
+	providing an invalid date.
+	Constructor that takes variables crashes when denomintor is trying to be set to 0
+*/
 #include <iostream>
 #include "Fraction.h"
 #include <cassert>
@@ -57,16 +65,15 @@ namespace cs_fraction
 	
 	ostream& operator<<(ostream& sign, const Fraction& x)
 	{//start
-		if (x.top < x.bottom)
+		if (x.top > x.bottom)
 		{
-			sign << x.top << "/" << x.bottom;
+			int y = x.top / x.bottom;
+			sign << y << "+" << x.top - x.bottom << "/" << x.bottom;
 		}
 		else
 		{
-			int y = x.top/x.bottom;
-			sign << y << "+" << x.top-x.bottom << "/" << x.bottom;
+			sign << x.top << "/" << x.bottom;
 		}
-		
 		return sign;
 	}//end
 

@@ -1,2 +1,8 @@
-﻿  a12_1.cpp
+﻿  Fraction.cpp
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(146): warning C4715: 'cs_fraction::Fraction::operator<': not all control paths return a value
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(164): warning C4715: 'cs_fraction::Fraction::operator<=': not all control paths return a value
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(182): warning C4715: 'cs_fraction::Fraction::operator>': not all control paths return a value
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(200): warning C4715: 'cs_fraction::Fraction::operator>=': not all control paths return a value
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(218): warning C4715: 'cs_fraction::Fraction::operator==': not all control paths return a value
+C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(236): warning C4715: 'cs_fraction::Fraction::operator!=': not all control paths return a value
   a12_1.vcxproj -> C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Debug\a12_1.exe
