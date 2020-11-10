@@ -54,20 +54,23 @@ namespace cs_fraction
 
 
 
-	/*
-	ostream& operator<<(ostream& sign)
-	{
-		sign << Fraction::top << "/" << bottom;
-		return sign;
-	}
-	*/
-
-
-
-	void Fraction::print()
+	
+	ostream& operator<<(ostream& sign, const Fraction& x)
 	{//start
-		cout << top << "/" << bottom;
+		if (x.top < x.bottom)
+		{
+			sign << x.top << "/" << x.bottom;
+		}
+		else
+		{
+			int y = x.top/x.bottom;
+			sign << y << "+" << x.top-x.bottom << "/" << x.bottom;
+		}
+		
+		return sign;
 	}//end
+
+
 
 
 
@@ -209,9 +212,9 @@ namespace cs_fraction
 		double og = top / bottom;//decimal of left side
 		double test = x.top / x.bottom;//decimal of right side
 		//test to see which decimal is smaller
-		if (og != test)
+		if (og == test)
 		{
-			return false;
+			return true;
 		}
 	}//end
 
@@ -227,7 +230,7 @@ namespace cs_fraction
 		double og = top / bottom;//decimal of left side
 		double test = x.top / x.bottom;//decimal of right side
 		//test to see which decimal is smaller
-		if (og == test)
+		if (og != test)
 		{
 			return true;
 		}

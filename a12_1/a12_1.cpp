@@ -25,12 +25,10 @@ using namespace cs_fraction;
 
 int main()
 {//start main
-	Fraction x(5, 10);
-	x.print();
-	cout << endl;
-	Fraction y(6, 10);
-	y.print();
-	cout << endl;
+	Fraction x(8, 9);
+	cout << x << endl;
+	Fraction y(3, 7);
+	cout << y << endl;
 	Fraction test(0, 0);
 
 
@@ -38,20 +36,16 @@ int main()
 	cout << "Math testers" << endl;
 	//"+" test
 	test = x + y;
-	test.print();
-	cout << endl;
+	cout << x << " + "<< y << " = " << test << endl;
 	//"-" test
 	test = x - y;
-	test.print();
-	cout << endl;
+	cout << x << " - " << y << " = " << test << endl;
 	//"*" test
 	test = x * y;
-	test.print();
-	cout << endl;
+	cout << x << " * " << y << " = " << test << endl;
 	//"/" test
 	test = x / y;
-	test.print();
-	cout << endl;
+	cout << x << " / " << y << " = " << test << endl;
 
 
 	//*******
@@ -62,9 +56,7 @@ int main()
 	y = 1/3
 	*/
 	//"<" tester
-	x.print();
-	cout << " < ";
-	y.print();
+	cout << x << " < " << y;
 	if (x < y)
 	{
 		cout << " is true" << endl;
@@ -74,9 +66,7 @@ int main()
 		cout << " is false" << endl;
 	}
 	//"<=" tester
-	x.print();
-	cout << " <= ";
-	y.print();
+	cout << x << " <= " << y;
 	if (x <= y)
 	{
 		cout << " is true" << endl;
@@ -86,9 +76,7 @@ int main()
 		cout << " is false" << endl;
 	}
 	//">" tester
-	x.print();
-	cout << " > ";
-	y.print();
+	cout << x << " > " << y;
 	if (x > y)
 	{
 		cout << " is true" << endl;
@@ -97,10 +85,8 @@ int main()
 	{
 		cout << " is false" << endl;
 	}
-	//"<=" tester
-	x.print();
-	cout << " <= ";
-	y.print();
+	//">=" tester
+	cout << x << " >= " << y;
 	if (x >= y)
 	{
 		cout << " is true" << endl;
@@ -137,13 +123,10 @@ int main()
 
 	//increment/decrement tester
 	cout << "increment/decrement tester" << endl;
-	y.print();
-	cout << " + 1 = ";
+	cout << y << " + 1 = ";
 	y++;
-	y.print();
-	cout << endl;
-	x.print();
-	cout << " - 1 = ";
+	cout << y << endl;
+	cout << x << " - 1 = ";
 	x--;
-	x.print(); cout << endl;
+	cout << x << endl;
 }//end main

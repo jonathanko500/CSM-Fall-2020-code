@@ -20,8 +20,7 @@ namespace cs_fraction
 			Fraction();
 			Fraction(int x = 0, int y = 1);
 			//<<
-			ostream& operator<<(ostream& sign);
-			void print();
+			friend ostream& operator<<(ostream& sign, const Fraction& x);
 			//operators
 			Fraction operator+ (const Fraction x) const;
 			Fraction operator- (const Fraction x) const;
