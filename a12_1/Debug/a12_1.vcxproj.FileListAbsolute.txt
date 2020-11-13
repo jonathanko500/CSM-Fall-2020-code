@@ -1,2 +1,4 @@
 C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Debug\a12_1.exe
 C:\Users\Ko Family\Desktop\CSM-Fall-2020-code\a12_1\Debug\a12_1.pdb
+C:\Users\Jonathan\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\Debug\a12_1.exe
+C:\Users\Jonathan\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\Debug\a12_1.pdb
