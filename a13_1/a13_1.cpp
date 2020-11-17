@@ -15,12 +15,17 @@ int main()
 
 	
 	//test function to return num of characters in word
-	cout << x << " has " << x.Size() << " characters" << endl;
-	cout << y << " has " << y.Size() << " characters" << endl;
+	cout << "object x" << " has " << x.Size() << " characters" << endl;
+	cout << "object y" << " has " << y.Size() << " characters" << endl;
 
 	//test to construct object w/ const string
-	x.setData("titan",5);
-	MyString z(x);
-	cout << z << " has " << z.Size() << " characters" << endl;
+	const MyString w("wizards");
+	MyString z(w);
+	cout << "object z" << " has " << z.Size() << " characters" << endl;
+
+	//test [] operator
+	y[1] = 'H';
+	y[2] = 'U';
+
 
 }//end main

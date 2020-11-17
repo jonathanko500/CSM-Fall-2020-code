@@ -1,6 +1,8 @@
 //implementation
 #pragma warning(disable:4996)
 #include <iostream>
+#include <cassert>
+#include <cstring>
 #include "MyString.h"
 using namespace std;
 
@@ -73,9 +75,45 @@ namespace cs_mystring
 	//operator overload
 
 	//overload <<
-	ostream& operator<<(ostream& sign, const MyString& x)
+	/*
+	ostream& operator<<(ostream& sign, const MyString& word)
 	{//start
-		sign << x.word;
+		sign << word.word;
 		return sign;
+	}//end
+	*/
+
+
+
+
+
+	//overload [] const
+	char MyString :: operator[](int num) const
+	{//start
+		assert(num >= 0 && num < strlen(word));
+		return word[num];
+	}//end
+
+
+
+
+
+
+	//overload [] const
+	char& MyString :: operator[](int num)
+	{//start
+		assert(num >= 0 && num < strlen(word));
+		return word[num];
+	}//end
+
+
+
+
+
+
+	//overload <
+	bool MyString :: operator< (const MyString term)
+	{//start
+
 	}//end
 }//end namespace

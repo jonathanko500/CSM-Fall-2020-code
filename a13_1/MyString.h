@@ -12,16 +12,21 @@ namespace cs_mystring
 			int len;
 			char* word;
 
-		//declare functions +constructor
+		//declare functions + constructor + operator overload
 		public:
-			//function
+			//function 
+			//constructors
 			MyString();
 			MyString(const char* term);
 			MyString(const MyString& term);
+			//function
 			int Size();
 			void setData(const char* term, int num);
 			//operator overload
-			friend ostream& operator<<(ostream& sign, const MyString& x);
+			//friend ostream& operator<<(ostream& sign, const MyString& word);
+			char operator[](int size) const;
+			char& operator[](int size);
+			bool operator< (const MyString term);
 	};//end claass
 	
 
