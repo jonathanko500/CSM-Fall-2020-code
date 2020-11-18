@@ -1,4 +1,17 @@
 //implementation
+/*
+	Class Invariant:
+	a MyString object has 2 data members: length of word and pointer pointing at a string
+	constructrs that make the object
+		default
+		regular
+		copy
+	Size() that returns teh length of word
+	overloaded opertor << that allows MyString object to be printed
+	overloaded [] to allow a change of 1 character
+	~MyString deallocates memory
+
+*/
 #pragma warning(disable:4996)
 #include <iostream>
 #include <cassert>
@@ -36,6 +49,7 @@ namespace cs_mystring
 
 
 	//function that copies const c-string 
+	//big 3
 	MyString::MyString(const MyString& term)
 	{//start
 		len = term.len;
@@ -58,30 +72,17 @@ namespace cs_mystring
 
 
 
-	//set data to defualt made object
-	void MyString::setData(const char* term, int num)
-    {//start
-        len = num;
-        delete [] word;
-        word = new char[strlen(term) + 1];    
-        strcpy(word, term);
-    }//end
-
-
-
-
 
 
 	//operator overload
 
-	//overload <<
-	/*
-	ostream& operator<<(ostream& sign, const MyString& word)
+	//overload <<	
+	ostream& operator<<(std::ostream& sign, const MyString& word)
 	{//start
 		sign << word.word;
 		return sign;
 	}//end
-	*/
+	
 
 
 
@@ -110,10 +111,30 @@ namespace cs_mystring
 
 
 
-
-	//overload <
-	bool MyString :: operator< (const MyString term)
+	
+	
+	//overload =
+	//big 3
+	MyString MyString :: operator= (const MyString& term)
 	{//start
-
+		if (this != &term) {
+			len = term.len;
+			delete[] word;
+			word = new char[strlen(term.word) + 1];
+			strcpy(word, term.word);
+		}
+		return *this;
 	}//end
+
+
+
+
+
+
+	//destructor
+	//big 3
+	MyString :: ~MyString()
+	{
+		delete[] word;
+	}
 }//end namespace

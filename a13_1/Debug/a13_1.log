@@ -1,2 +1,6 @@
-﻿  a13_1.cpp
+﻿  MyString.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a13_1\MyString.cpp(81,3): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a13_1\MyString.cpp(93,3): warning C4018: '<': signed/unsigned mismatch
+  a13_1.cpp
+  Generating Code...
   a13_1.vcxproj -> C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a13_1\Debug\a13_1.exe
