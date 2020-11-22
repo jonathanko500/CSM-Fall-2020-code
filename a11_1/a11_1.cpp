@@ -15,7 +15,7 @@ public:
 	Fraction();
 	Fraction(int x = 0, int y = 1);
 	//<<
-	ostream& operator<<(ostream& sign);
+	friend ostream& operator<<(ostream& sign, const Fraction& x);
 	void print();
 	//operators
 	Fraction operator+ (const Fraction x) const;
@@ -67,13 +67,21 @@ Fraction::Fraction(int x, int y)
 
 
 
-/*
-ostream& operator<<(ostream& sign)
-{
-	sign << Fraction::top << "/" << bottom;
+
+ostream& operator<<(ostream& sign, const Fraction& x)
+{//start
+	if (x.top > x.bottom)
+	{
+		int y = x.top / x.bottom;
+		sign << y << "+" << x.top - x.bottom << "/" << x.bottom;
+	}
+	else
+	{
+		sign << x.top << "/" << x.bottom;
+	}
 	return sign;
-}
-*/
+}//end
+
 
 
 
@@ -299,9 +307,11 @@ int main()
 	Fraction x(1,2);
 	x.print();
 	cout << endl;
+	//cout << x << endl;
 	Fraction y(1,3);
 	y.print();
 	cout << endl;
+	//cout << y << endl;
 	Fraction test(0,0);
 	//*****
 	cout << "Math testers" << endl;
