@@ -67,7 +67,7 @@ Fraction::Fraction(int x, int y)
 
 
 
-/*
+
 ostream& operator<<(ostream& sign, const Fraction& x)
 {//start
 	if (x.top > x.bottom)
@@ -81,7 +81,7 @@ ostream& operator<<(ostream& sign, const Fraction& x)
 	}
 	return sign;
 }//end
-*/
+
 
 
 
@@ -305,6 +305,105 @@ Fraction Fraction :: operator-- (int)
 int main()
 {//start main
 	Fraction x(1,2);
+	cout << x << endl;
+	//cout << x << endl;
+	Fraction y(1,3);
+	cout << x << endl;
+	//cout << y << endl;
+	Fraction test(0,0);
+	//*****
+	cout << "Math testers" << endl;
+	//"+" test
+	test = x + y;
+	cout << test << endl;
+	//"-" test
+	test = x - y;
+	cout << test << endl;
+	//"*" test
+	test = x * y;
+	cout << test << endl;
+	//"/" test
+	test = x / y;
+	cout << test << endl;
+	//*******
+	//"+=" test
+	cout << "Inequality testers" << endl;
+	/*
+	x = 1/2
+	y = 1/3
+	*/
+	//"<" tester
+	cout << x << " < " << y;
+	if (x < y)
+	{
+		cout << " is true"<< endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//"<=" tester
+	cout << x << " <= " << y;
+	if (x <= y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//">" tester
+	cout << x << " > " << y;
+	if (x > y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//">=" tester
+	cout << x << " >= " << y;
+	if (x >= y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//"==" tester
+	cout << x << " == " << y;
+	if (x == y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}//"!=" tester
+	cout << x << " != " << y;
+	if (x != y)
+	{
+		cout << " is true" << endl;
+	}
+	else
+	{
+		cout << " is false" << endl;
+	}
+	//increment/decrement tester
+	y++;
+	cout << y << endl;
+	x--;
+	cout << x << endl;
+}//end main
+
+/*
+original main
+
+int main()
+{//start main
+	Fraction x(1,2);
 	x.print();
 	cout << endl;
 	//cout << x << endl;
@@ -334,17 +433,13 @@ int main()
 	//*******
 	//"+=" test
 	cout << "Inequality testers" << endl;
-	/*
-	x = 1/2
-	y = 1/3
-	*/
 	//"<" tester
 	x.print();
 	cout << " < ";
 	y.print();
 	if (x < y)
 	{
-		cout << " is true"<< endl;
+		cout << " is true" << endl;
 	}
 	else
 	{
@@ -416,3 +511,4 @@ int main()
 	x--;
 	x.print(); cout << endl;
 }//end main
+*/
