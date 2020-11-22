@@ -67,7 +67,7 @@ Fraction::Fraction(int x, int y)
 
 
 
-
+/*
 ostream& operator<<(ostream& sign, const Fraction& x)
 {//start
 	if (x.top > x.bottom)
@@ -81,7 +81,7 @@ ostream& operator<<(ostream& sign, const Fraction& x)
 	}
 	return sign;
 }//end
-
+*/
 
 
 
