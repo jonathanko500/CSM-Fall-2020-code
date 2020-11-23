@@ -1,0 +1,10 @@
+﻿  a12_1.cpp
+  Fraction.cpp
+  Generating Code...
+C:\Users\Pie88\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(190): warning C4715: 'cs_fraction::Fraction::operator>': not all control paths return a value
+C:\Users\Pie88\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(154): warning C4715: 'cs_fraction::Fraction::operator<': not all control paths return a value
+C:\Users\Pie88\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(226): warning C4715: 'cs_fraction::Fraction::operator==': not all control paths return a value
+C:\Users\Pie88\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(208): warning C4715: 'cs_fraction::Fraction::operator>=': not all control paths return a value
+C:\Users\Pie88\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(172): warning C4715: 'cs_fraction::Fraction::operator<=': not all control paths return a value
+C:\Users\Pie88\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\Fraction.cpp(244): warning C4715: 'cs_fraction::Fraction::operator!=': not all control paths return a value
+  a12_1.vcxproj -> C:\Users\Pie88\OneDrive\Desktop\CSM-Fall-2020-code\a12_1\x64\Debug\a12_1.exe
