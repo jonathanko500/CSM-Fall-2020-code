@@ -59,6 +59,8 @@ namespace cs_mystring
 		MyString(const MyString& term);//big 3 copy constructor
 		//function
 		int Size();
+		const int Size() const;
+		void read(std::istream& in, char stop);
 		~MyString();//big 3 destructor
 		//operator overload
 		friend std::ostream& operator<<(std::ostream& sign, const MyString& word);

@@ -74,12 +74,40 @@ namespace cs_mystring
 
 
 
+	 //function that return numb const characters 
+	const int MyString::Size() const
+	{//start
+		return len;
+	}//end
+
+
+
+
+
+
 	//destructor
 	//big 3
 	MyString :: ~MyString()
 	{
 		delete[] word;
 	}
+
+
+
+
+
+
+	//read
+	void MyString::read(std::istream& in, char stop)
+	{//start
+		char temp[MyString::MAX_INPUT_SIZE + 1];
+		in.getline(temp, MyString::MAX_INPUT_SIZE, stop);
+		MyString term;
+		term.len = strlen(temp);
+		delete[] term.word;
+		term.word = new char[strlen(temp) + 1];
+		strcpy(term.word, temp);
+	}//end
 	 
 	 
 	 
@@ -179,16 +207,24 @@ namespace cs_mystring
 		strcat(temp.word, term.word);
 		return temp;
 	}//end
-
-
-
-
-
-
-	//overload +=
+	 
+	 
+	 
+	 
+	 
+	 
+	 //overload +=
 	MyString MyString :: operator+= (const MyString& term)
 	{//start
-		*this += term;
-		return*this;
+		MyString temp;
+		if (this != &term)
+		{			
+			temp.len = len + term.len;
+			delete temp.word;
+			temp.word = new char[temp.len + 1];
+			strcpy(temp.word, term.word);
+			strcat(temp.word, term.word);
+		}
+		return temp;
 	}//end
 }//end namespace

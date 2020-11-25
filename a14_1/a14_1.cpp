@@ -13,11 +13,14 @@ assign 1 new characters in the string obj
 the object is compatible with <<
 copy an object
 */
+#include <fstream>
+#include <cctype>      // for toupper()
+#include <string>     
+#include <cassert>
 #include <iostream>
 #include "MyString.h"
 using namespace std;
 using namespace cs_mystring;
-
 
 
 int main()
@@ -29,30 +32,39 @@ int main()
 
 
 	//test function to return num of characters in word
-	cout << x << " has " << x.Size() << " characters" << endl;
-	cout << y << " has " << y.Size() << " characters" << endl;
+	cout << x << " = x has " << x.Size() << " characters" << endl;
+	cout << y << " = y has " << y.Size() << " characters" << endl;
 
 	//test to construct object w/ const string
 	const MyString w("wizards");
+	cout << w.Size() << endl;
 	MyString z(w);
-	cout << z << " has " << z.Size() << " characters" << endl;
+	cout << z << " = z has " << z.Size() << " characters" << endl;
 
 	//test [] operator
 	y[0] = 'H';
 	y[1] = 'U';
-	cout << y << " has " << y.Size() << " characters" << endl;
-
-	cout << w[0] << endl;
+	cout << y << " = y has " << y.Size() << " characters" << endl;;
 
 	//test = operator
 	x = z;
-	cout << x << " has " << x.Size() << " characters" << endl;
+	cout << x << " = x has " << x.Size() << " characters" << endl;
 
-	//test + operator
-	cout << y + y << endl;
 
-	//test +=
-	y += y;
-	cout << x << endl;
+
+	//test read
+	cout << endl << "----- now, line by line" << endl;
+	MyString s;
+	ifstream in2("Text.txt");
+	assert(in2);
+	while (in2.peek() == '#') {
+		in2.ignore(128, '\n');
+	}
+	s.read(in2, '\n');
+	while (in2) {
+		cout << "Read string = " << s << endl;
+		s.read(in2, '\n');
+	}
+	in2.close();
 
 }//end main
