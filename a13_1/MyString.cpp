@@ -238,12 +238,5 @@ namespace cs_mystring
 		}
 		return false;
 	}//end
-
-
-
-
-
-	
-	
 	
 }//end namespace
