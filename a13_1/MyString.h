@@ -16,7 +16,15 @@ Another constuctor that copies a const MyString object and creates another MyStr
 4 overloaded operator
 	= is overloaded to assign 1 MyString to another
 	<< to allow MyString object to be compatible and printed without a print function
-	2x [] to allow change of characters (const object or not)
+	2x [] to allow change of characters (const object or not).
+
+6 inequality operator
+	< test to see if less than
+	<= test to see if less than or equal to
+	> test to see if greater than
+	>= test to see if greater than or equal to
+	== test to see if equal to
+	!= test to see if not equal to
 
 
 		MyString();
@@ -43,6 +51,19 @@ Another constuctor that copies a const MyString object and creates another MyStr
 			post: This overloaded operator function allows a single MyString character to be returned and changed
 		MyString operator= (const MyString& term);
 			post: This overloaded operator allows a MyString object to be assigned the same data has another non const MyString object
+
+		friend bool operator< (const MyString x, const MyString y);
+			post : return true if the the left is < then the right
+		friend bool operator<= (const MyString x, const MyString y);
+			post : return true if the the left is <= then the right
+		friend bool operator> (const MyString x, const MyString y);
+			post : return true if the the left is > then the right
+		friend bool operator>= (const MyString x, const MyString y);
+			post : return true if the the left is >= then the right
+		friend bool operator== (const MyString x, const MyString y);
+			post : return true if the the left is == then the right
+		friend bool operator!= (const MyString x, const MyString y);
+			post : return true if the the left is != then the right
 
 */
 #include <iostream>
@@ -75,12 +96,12 @@ namespace cs_mystring
 			char& operator[](int size);
 			MyString operator= (const MyString& term);//big 3 assignment operator
 			//inequality overload
-			bool operator< (const MyString x) const;
-			bool operator<= (const MyString x) const;
-			bool operator> (const MyString x) const;
-			bool operator>= (const MyString x) const;
-			bool operator== (const MyString x) const;
-			bool operator!= (const MyString x) const;
+			friend bool operator< (const MyString x, const MyString y);
+			friend bool operator<= (const MyString x, const MyString y);
+			friend bool operator> (const MyString x, const MyString y);
+			friend bool operator>= (const MyString x, const MyString y);
+			friend bool operator== (const MyString x, const MyString y);
+			friend bool operator!= (const MyString x, const MyString y);
 
 
 

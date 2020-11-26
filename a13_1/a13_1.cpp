@@ -117,7 +117,7 @@ void RelationTest()
     cout << "    Is left >= right? " << boolString(s >= t) << endl;
     cout << "    Does left == right? " << boolString(s == t) << endl;
     cout << "    Does left != right ? " << boolString(s != t) << endl;
-    /*
+    
     MyString u("wackity");
     const char* v = "why";
     cout << "Comparing " << v << " to " << u << endl;
@@ -127,7 +127,7 @@ void RelationTest()
     cout << "    Is left >= right? " << boolString(v >= u) << endl;
     cout << "    Does left == right? " << boolString(v == u) << endl;
     cout << "    Does left != right ? " << boolString(v != u) << endl;
-    */
+    
 }
 
 
