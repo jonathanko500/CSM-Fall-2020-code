@@ -35,6 +35,20 @@ Another constuctor that copies a const MyString object and creates another MyStr
 			post: This overloaded operator function allows a single MyString character to be returned and changed
 		MyString operator= (const MyString& term);
 			post: This overloaded operator allows a MyString object to be assigned the same data has another non const MyString object
+
+
+		friend bool operator< (const MyString x, const MyString y);
+			post : return true if the the left is < then the right
+		friend bool operator<= (const MyString x, const MyString y);
+			post : return true if the the left is <= then the right
+		friend bool operator> (const MyString x, const MyString y);
+			post : return true if the the left is > then the right
+		friend bool operator>= (const MyString x, const MyString y);
+			post : return true if the the left is >= then the right
+		friend bool operator== (const MyString x, const MyString y);
+			post : return true if the the left is == then the right
+		friend bool operator!= (const MyString x, const MyString y);
+			post : return true if the the left is != then the right
 */
 #include <iostream>
 #ifndef MYSTRING_H
@@ -70,6 +84,14 @@ namespace cs_mystring
 		MyString operator= (const MyString& term);//big 3 assignment operator
 		MyString operator+ (const MyString& term);
 		MyString operator+= (const MyString& term);
+
+		//inequality overload
+		friend bool operator< (const MyString x, const MyString y);
+		friend bool operator<= (const MyString x, const MyString y);
+		friend bool operator> (const MyString x, const MyString y);
+		friend bool operator>= (const MyString x, const MyString y);
+		friend bool operator== (const MyString x, const MyString y);
+		friend bool operator!= (const MyString x, const MyString y);
 	};//end claass
 
 
@@ -77,3 +99,104 @@ namespace cs_mystring
 
 #endif
 
+/*
+*******************OUTPUT****************
+----- Testing basic String creation & printing
+string [0] = Wow
+string [1] = C++ is neat!
+string [2] =
+string [3] = a-z
+
+----- Now reading MyStrings from file
+
+----- first, word by word
+
+----- now, line by line
+This file has some strings that are used in the string test to checkRead string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# reading strings from files. The default overloaded >> of your string Read string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# class should skip over any leading spaces and read characters intoRead string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# the string object, stopping at the first whitespace character (this isRead string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# similar to the behavior of >> on char *).  The read method of theRead string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# string class is a little fancier. It allows client to restrictRead string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# how many characters at max to read and what character to use as Read string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# delimiter, so you can stop at newline instead of space, for example.Read string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# Reading consumes the delimiting character, so the next read starts Read string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+# after that.Read string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+#Read string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+The  first  time  we  willRead string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+    read individual words, next    Read string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+we read whole linesRead string = This file has some strings that are used in the string test to check
+# reading strings from files. The default overloaded >> o
+
+----- Testing access to characters (using const)
+Whole string is abcdefghijklmnopqsrtuvwxyz
+now char by char:
+----- Testing access to characters (using non-const)
+Start with abcdefghijklmnopqsrtuvwxyz and convert to abcdefghijklmnopqsrtuvwxyz
+
+----- Testing relational operators between MyStrings
+Comparing app to apple
+        Is left < right? true
+        Is left <= right? true
+        Is left > right? false
+        Is left >= right? false
+        Does left == right? false
+        Does left != right ? true
+Comparing apple to
+        Is left < right? false
+        Is left <= right? false
+        Is left > right? true
+        Is left >= right? true
+        Does left == right? false
+        Does left != right ? true
+Comparing  to Banana
+        Is left < right? true
+        Is left <= right? true
+        Is left > right? false
+        Is left >= right? false
+        Does left == right? false
+        Does left != right ? true
+Comparing Banana to Banana
+        Is left < right? false
+        Is left <= right? true
+        Is left > right? false
+        Is left >= right? true
+        Does left == right? true
+        Does left != right ? false
+
+----- Testing relations between MyStrings and char *
+Comparing he to hello
+        Is left < right? true
+        Is left <= right? true
+        Is left > right? false
+        Is left >= right? false
+        Does left == right? false
+        Does left != right ? true
+Comparing why to wackity
+        Is left < right? false
+        Is left <= right? false
+        Is left > right? true
+        Is left >= right? true
+        Does left == right? false
+        Does left != right ? true
+
+----- Testing concatentation on MyStrings
+
+----- Testing concatentation between MyString and char *
+
+----- Testing shorthand concat/assign on MyStrings
+who += what =
+*/

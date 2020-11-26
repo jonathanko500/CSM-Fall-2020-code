@@ -24,7 +24,6 @@ namespace cs_mystring
 	//defalut constructor
 	MyString::MyString()
 	{//start
-		len = 0;
 		word = new char[1];
 		strcpy(word, "");
 	}//end
@@ -37,7 +36,6 @@ namespace cs_mystring
 	//constructor
 	MyString::MyString(const char* term)
 	{//start
-		len = strlen(term);
 		word = new char[strlen(term) + 1];
 		strcpy(word, term);
 	}//end
@@ -53,7 +51,6 @@ namespace cs_mystring
 	//big 3
 	MyString::MyString(const MyString& term)
 	{//start
-		len = term.len;
 		word = new char[strlen(term.word) + 1];
 		strcpy(word, term.word);
 	}//end
@@ -226,5 +223,99 @@ namespace cs_mystring
 			strcat(temp.word, term.word);
 		}
 		return temp;
+	}//end
+
+
+
+
+
+
+
+	//inequlaity overloads
+
+	//overload <
+	bool operator< (const MyString x, const MyString y)
+	{//start
+		if (strcmp(x.word, y.word) < 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+
+	//overload <=
+	bool operator<= (const MyString x, const MyString y)
+	{//start
+		if (strcmp(x.word, y.word) < 0 || strcmp(x.word, y.word) == 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+	//overload >
+	bool operator> (const MyString x, const MyString y)
+	{//start
+		if (strcmp(x.word, y.word) > 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+	//overload >=
+	bool operator>= (const MyString x, const MyString y)
+	{//start
+		if (strcmp(x.word, y.word) > 0 || strcmp(x.word, y.word) == 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+	//overload ==
+	bool operator== (const MyString x, const MyString y)
+	{//start
+		if (strcmp(x.word, y.word) == 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+	//overload !=
+	bool operator!= (const MyString x, const MyString y)
+	{//start
+		if (strcmp(x.word, y.word) != 0)
+		{
+			return true;
+		}
+		return false;
 	}//end
 }//end namespace

@@ -22,7 +22,9 @@ copy an object
 using namespace std;
 using namespace cs_mystring;
 
+
 void BasicTest();
+void RelationTest();
 void ConcatTest();
 void CopyTest();
 MyString AppendTest(const MyString& ref, MyString val);
@@ -32,6 +34,7 @@ string boolString(bool convertMe);
 int main()
 {
     BasicTest();
+    RelationTest();
     ConcatTest();
     CopyTest();
 }
@@ -126,6 +129,48 @@ void BasicTest()
 
 
 
+void RelationTest()
+{
+    cout << "\n----- Testing relational operators between MyStrings\n";
+
+    const MyString strs[] =
+    { MyString("app"), MyString("apple"), MyString(""),
+    MyString("Banana"), MyString("Banana") };
+
+    for (int i = 0; i < 4; i++) {
+        cout << "Comparing " << strs[i] << " to " << strs[i + 1] << endl;
+        cout << "\tIs left < right? " << boolString(strs[i] < strs[i + 1]) << endl;
+        cout << "\tIs left <= right? " << boolString(strs[i] <= strs[i + 1]) << endl;
+        cout << "\tIs left > right? " << boolString(strs[i] > strs[i + 1]) << endl;
+        cout << "\tIs left >= right? " << boolString(strs[i] >= strs[i + 1]) << endl;
+        cout << "\tDoes left == right? " << boolString(strs[i] == strs[i + 1]) << endl;
+        cout << "\tDoes left != right ? " << boolString(strs[i] != strs[i + 1]) << endl;
+    }
+
+    cout << "\n----- Testing relations between MyStrings and char *\n";
+    MyString s("he");
+    const char* t = "hello";
+    cout << "Comparing " << s << " to " << t << endl;
+    cout << "\tIs left < right? " << boolString(s < t) << endl;
+    cout << "\tIs left <= right? " << boolString(s <= t) << endl;
+    cout << "\tIs left > right? " << boolString(s > t) << endl;
+    cout << "\tIs left >= right? " << boolString(s >= t) << endl;
+    cout << "\tDoes left == right? " << boolString(s == t) << endl;
+    cout << "\tDoes left != right ? " << boolString(s != t) << endl;
+
+    MyString u("wackity");
+    const char* v = "why";
+    cout << "Comparing " << v << " to " << u << endl;
+    cout << "\tIs left < right? " << boolString(v < u) << endl;
+    cout << "\tIs left <= right? " << boolString(v <= u) << endl;
+    cout << "\tIs left > right? " << boolString(v > u) << endl;
+    cout << "\tIs left >= right? " << boolString(v >= u) << endl;
+    cout << "\tDoes left == right? " << boolString(v == u) << endl;
+    cout << "\tDoes left != right ? " << boolString(v != u) << endl;
+
+}
+
+
 
 
 void ConcatTest()
@@ -135,11 +180,13 @@ void ConcatTest()
     const MyString s[] =
     { MyString("outrageous"), MyString("milk"), MyString(""),
     MyString("cow"), MyString("bell") };
+
     /*
     for (int i = 0; i < 4; i++) {
         cout << s[i] << " + " << s[i + 1] << " = " << s[i] + s[i + 1] << endl;
     }
     */
+
     cout << "\n----- Testing concatentation between MyString and char *\n";
 
     const MyString a("abcde");
