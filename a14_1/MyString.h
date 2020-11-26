@@ -70,7 +70,6 @@ namespace cs_mystring
 		MyString operator= (const MyString& term);//big 3 assignment operator
 		MyString operator+ (const MyString& term);
 		MyString operator+= (const MyString& term);
-
 	};//end claass
 
 

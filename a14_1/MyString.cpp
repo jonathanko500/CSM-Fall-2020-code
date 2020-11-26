@@ -107,6 +107,7 @@ namespace cs_mystring
 		delete[] term.word;
 		term.word = new char[strlen(temp) + 1];
 		strcpy(term.word, temp);
+		cout << term.word;
 	}//end
 	 
 	 
@@ -207,7 +208,6 @@ namespace cs_mystring
 		strcat(temp.word, term.word);
 		return temp;
 	}//end
-	 
 	 
 	 
 	 
