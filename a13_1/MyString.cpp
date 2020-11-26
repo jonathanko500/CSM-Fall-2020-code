@@ -25,7 +25,7 @@ namespace cs_mystring
 	//defalut constructor
 	MyString::MyString()
 	{//start
-		len = 0;
+		//len = 0;
 		word = new char[1];
 		strcpy(word, "");
 	}//end
@@ -38,7 +38,7 @@ namespace cs_mystring
 	//constructor
 	MyString::MyString(const char* term)
 	{//start
-		len = strlen(term);
+		//len = strlen(term);
 		word = new char[strlen(term) + 1];
 		strcpy(word, term);
 	}//end
@@ -52,7 +52,7 @@ namespace cs_mystring
 	//big 3
 	MyString::MyString(const MyString& term)
 	{//start
-		len = term.len;
+		//len = term.len;
 		word = new char[strlen(term.word) + 1];
 		strcpy(word, term.word);
 	}//end
@@ -64,6 +64,17 @@ namespace cs_mystring
 
 	 //function that return numb characters
 	int MyString::Size()
+	{//start
+		return len;
+	}//end
+
+
+
+
+
+
+	//return len but for const MyString
+	const int MyString::Size() const
 	{//start
 		return len;
 	}//end
@@ -137,4 +148,103 @@ namespace cs_mystring
 	{
 		delete[] word;
 	}
+
+
+
+
+
+
+	//inequality overloads
+
+	//overload <
+	bool MyString :: operator< (const MyString x) const
+	{//start
+		if (strcmp(word, x.word) < 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+
+	//overload <=
+	bool MyString :: operator<= (const MyString x) const
+	{//start
+		if (strcmp(word, x.word) < 0 || strcmp(word, x.word) == 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+	//overload >
+	bool MyString :: operator> (const MyString x) const
+	{//start
+		if (strcmp(word, x.word) > 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+	//overload >=
+	bool MyString :: operator>= (const MyString x) const
+	{//start
+		if (strcmp(word, x.word) > 0 || strcmp(word, x.word) == 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+	//overload ==
+	bool MyString :: operator== (const MyString x) const
+	{//start
+		if (strcmp(word, x.word) == 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+
+	//overload !=
+	bool MyString :: operator!= (const MyString x) const
+	{//start
+		if (strcmp(word, x.word) != 0)
+		{
+			return true;
+		}
+		return false;
+	}//end
+
+
+
+
+
+	
 }//end namespace

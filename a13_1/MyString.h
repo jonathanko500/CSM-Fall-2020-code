@@ -67,13 +67,23 @@ namespace cs_mystring
 			MyString(const MyString& term);//big 3 copy constructor
 			//function
 			int Size();
+			const int Size() const;
 			~MyString();//big 3 destructor
 			//operator overload
 			friend std::ostream& operator<<(std::ostream& sign, const MyString& word);
 			char operator[](int size) const;
 			char& operator[](int size);
 			MyString operator= (const MyString& term);//big 3 assignment operator
-			
+			//inequality overload
+			bool operator< (const MyString x) const;
+			bool operator<= (const MyString x) const;
+			bool operator> (const MyString x) const;
+			bool operator>= (const MyString x) const;
+			bool operator== (const MyString x) const;
+			bool operator!= (const MyString x) const;
+
+
+
 	};//end claass
 	
 
