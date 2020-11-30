@@ -4,7 +4,7 @@
 using namespace std;
 
 //define getSpecies
-
+/*
 string Creature::getSpecies() const
 {//start
     switch (type)
@@ -16,7 +16,7 @@ string Creature::getSpecies() const
     }//end switch
     return "unknown";
 }//end
-
+*/
 
 
 
@@ -50,7 +50,7 @@ Creature::Creature(int newType, int newStrength, int newHitpoints)
 
 
 
-
+/*
 //getDamage
 int Creature :: getDamage() const
 {//start
@@ -85,7 +85,7 @@ int Creature :: getDamage() const
 
     return damage;
 }//end
-
+*/
 
 
 
@@ -107,4 +107,26 @@ int Creature::getStrength() const
 int Creature::getHitpoints() const
 {//start
     return hitpoints;
+}//end
+
+
+
+
+
+
+//set atk
+void Creature::setStrength(const int atk)
+{//start
+    strength = atk;
+}//end
+
+
+
+
+
+
+//set hp
+void Creature::setHitpoints(const int hp)
+{//start
+    hitpoints = hp;
 }//end

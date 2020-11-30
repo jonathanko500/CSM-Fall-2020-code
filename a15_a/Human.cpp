@@ -1,5 +1,4 @@
 #include <iostream>
-#include <ctime>
 #include "Human.h"
 using namespace std;
 
@@ -23,3 +22,16 @@ Human::Human(int atk, int hp)
     strength = atk;
     hitpoints = hp;
 }//end
+
+
+
+
+
+
+
+
+
+
+
+
+

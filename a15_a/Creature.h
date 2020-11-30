@@ -12,10 +12,12 @@ class Creature
     public:
         Creature();             // initialize to Human, 10 strength, 10 hitpoints
         Creature(int newType, int newStrength, int newHitpoints);
-        int getDamage() const;         // returns the amount of damage this Creature
+        //int getDamage() const;         // returns the amount of damage this Creature
                                        // inflicts in one round of combat
-        int getStrength() const;        
+        int getStrength() const;
         int getHitpoints() const;
+        void setStrength(const int atk);
+        void setHitpoints(const int hp);
     // also include appropriate accessors and mutators    
 };//end class
 
