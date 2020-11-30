@@ -1,5 +1,8 @@
 ﻿  a15_a.cpp
+  Balrog.cpp
+  Creature.cpp
   Cyberdemon.cpp
+  Demon.cpp
   Elf.cpp
   Human.cpp
   Generating Code...

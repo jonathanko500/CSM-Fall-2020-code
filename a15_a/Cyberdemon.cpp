@@ -22,3 +22,4 @@ Cyberdemon::Cyberdemon(int atk, int hp)
     strength = atk;
     hitpoints = hp;
 }//end
+

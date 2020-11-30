@@ -9,7 +9,6 @@ class Human : public Creature
 	public:
 		Human();
 		Human(int atk, int hp);
-		
 };//end class
 
 #endif

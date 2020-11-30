@@ -30,4 +30,9 @@ int main()
     cout << "non-default Cyberdemon strength/hitpoints: " << c.getStrength() << "/" << c.getHitpoints() << endl;
     cout << "non-default Balrog strength/hitpoints: " << b.getStrength() << "/" << b.getHitpoints() << endl;
     cout << endl;
+
+    //****************
+
+
+   
 }//end main

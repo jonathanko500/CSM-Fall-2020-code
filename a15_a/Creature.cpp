@@ -23,7 +23,6 @@ string Creature::getSpecies() const
 
 
 
-
 //default constructor
 Creature::Creature()
 {//start
@@ -55,11 +54,9 @@ Creature::Creature(int newType, int newStrength, int newHitpoints)
 int Creature :: getDamage() const
 {//start
     int damage;
-
     // All Creatures inflict damage which is a random number up to their strength
     damage = (rand() % strength) + 1;
     cout << getSpecies() << " attacks for " << damage << " points!" << endl;
-
     // Demons can inflict damage of 50 with a 25% chance
     if (type == 2 || type == 1) {
         if (rand() % 4 == 0) {
@@ -67,7 +64,6 @@ int Creature :: getDamage() const
             cout << "Demonic attack inflicts 50 additional damage points!" << endl;
         }
     }
-
     // Elves inflict double magical damage with a 50% chance
     if (type == 3) {
         if ((rand() % 2) == 0) {
@@ -75,14 +71,12 @@ int Creature :: getDamage() const
             damage *= 2;
         }
     }
-
     // Balrogs are so fast they get to attack twice
     if (type == 2) {
         int damage2 = (rand() % strength) + 1;
         cout << "Balrog speed attack inflicts " << damage2 << " additional damage points!" << endl;
         damage += damage2;
     }
-
     return damage;
 }//end
 */
