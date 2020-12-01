@@ -3,12 +3,14 @@
 #include "Demon.h"
 #include <string>
 
-class Cyberdemon : public Demon
-{//start class
-public:
-	Cyberdemon();
-	Cyberdemon(int atk, int hp);
-
-};//end class
+namespace cs_creature
+{//start namespace
+	class Cyberdemon : public Demon
+	{//start class
+	public:
+		Cyberdemon();
+		Cyberdemon(int atk, int hp);
+	};//end class
+}//end namespace
 
 #endif

@@ -3,13 +3,18 @@
 #include "Creature.h"
 #include <string>
 
-class Demon : public Creature
-{//start class
-public:
-	Demon();
-	Demon(int atk, int hp);
 
-};//end class
+namespace cs_creature
+{//start namespace
+	class Demon : public Creature
+	{//start class
+	public:
+		Demon();
+		Demon(int atk, int hp);
+	};//end class
+}//end namespace
+
+
 
 #endif
 

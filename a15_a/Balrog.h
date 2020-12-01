@@ -3,12 +3,17 @@
 #include "Demon.h"
 #include <string>
 
-class Balrog : public Demon
-{//start class
-public:
-	Balrog();
-	Balrog(int atk, int hp);
+namespace cs_creature
+{//start namespace
+	class Balrog : public Demon
+	{//start class
+	public:
+		Balrog();
+		Balrog(int atk, int hp);
 
-};//end class
+	};//end class
+}//end namespace
+
+
 
 #endif

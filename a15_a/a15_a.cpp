@@ -4,7 +4,7 @@
 #include "Balrog.h"
 #include "Elf.h"
 
-using namespace std;
+using namespace cs_creature;
 
 int main()
 {//start main
@@ -24,15 +24,13 @@ int main()
     cout << "default Elf strength/hitpoints: " << e1.getStrength() << "/" << e1.getHitpoints() << endl;
     cout << "default Cyberdemon strength/hitpoints: " << c1.getStrength() << "/" << c1.getHitpoints() << endl;
     cout << "default Balrog strength/hitpoints: " << b1.getStrength() << "/" << b1.getHitpoints() << endl;
-
+    cout << "****************" << endl;
     cout << "non-default Human strength/hitpoints: " << h.getStrength() << "/" << h.getHitpoints() << endl;
     cout << "non-default Elf strength/hitpoints: " << e.getStrength() << "/" << e.getHitpoints() << endl;
     cout << "non-default Cyberdemon strength/hitpoints: " << c.getStrength() << "/" << c.getHitpoints() << endl;
     cout << "non-default Balrog strength/hitpoints: " << b.getStrength() << "/" << b.getHitpoints() << endl;
     cout << endl;
 
-    //****************
-
-
+    //***************
    
 }//end main

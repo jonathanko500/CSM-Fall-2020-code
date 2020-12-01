@@ -4,11 +4,16 @@
 #include <string>
 using namespace std;
 
-class Human : public Creature
-{//start class
+namespace cs_creature
+{//start namespace
+	class Human : public Creature
+	{//start class
 	public:
 		Human();
 		Human(int atk, int hp);
-};//end class
+		//int getDamage() const;
+	};//end class
+}//end namespace
+
 
 #endif

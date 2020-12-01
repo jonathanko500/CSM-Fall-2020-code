@@ -4,12 +4,17 @@
 #include <string>
 using namespace std;
 
-class Elf : public Creature
-{//start class
-public:
-	Elf();
-	Elf(int atk, int hp);
+namespace cs_creature
+{//start namespace
+	class Elf : public Creature
+	{//start class
+	public:
+		Elf();
+		Elf(int atk, int hp);
 
-};//end class
+	};//end class
+}//end namespace
+
+
 
 #endif
