@@ -5,9 +5,8 @@ using namespace std;
 //default constructor
 Balrog::Balrog()
 {//start
-    type = 2;
-    strength = 10;
-    hitpoints = 10;
+    Demon();
+    setType(2);
 }//end
 
 
@@ -19,6 +18,6 @@ Balrog::Balrog()
 Balrog::Balrog(int atk, int hp)
     : Balrog()
 {//start
-    strength = atk;
-    hitpoints = hp;
+    setHitpoints(hp);
+    setStrength(atk);
 }//end

@@ -108,6 +108,17 @@ int Creature::getHitpoints() const
 
 
 
+//get type
+int Creature::getType() const
+{//start
+    return type;
+}//end 
+
+
+
+
+
+
 //set atk
 void Creature::setStrength(const int atk)
 {//start
@@ -123,4 +134,15 @@ void Creature::setStrength(const int atk)
 void Creature::setHitpoints(const int hp)
 {//start
     hitpoints = hp;
+}//end
+
+
+
+
+
+
+//set type
+void Creature::setType(const int spec)
+{//start
+    type = spec;
 }//end

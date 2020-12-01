@@ -5,9 +5,7 @@ using namespace std;
 //default constructor
 Cyberdemon::Cyberdemon()
 {//start
-    type = 1;
-    strength = 10;
-    hitpoints = 10;
+    Demon();
 }//end
 
 
@@ -19,7 +17,7 @@ Cyberdemon::Cyberdemon()
 Cyberdemon::Cyberdemon(int atk, int hp)
     : Cyberdemon()
 {//start
-    strength = atk;
-    hitpoints = hp;
+    setHitpoints(hp);
+    setStrength(atk);
 }//end
 

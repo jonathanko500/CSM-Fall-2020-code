@@ -5,9 +5,7 @@ using namespace std;
 //default constructor
 Human::Human()
 {//start
-    type = 0;
-    strength = 10;
-    hitpoints = 10;
+    Creature();
 }//end
 
 
@@ -19,8 +17,8 @@ Human::Human()
 Human::Human(int atk, int hp)
     : Creature()
 {//start
-    strength = atk;
-    hitpoints = hp;
+    setHitpoints(hp);
+    setStrength(atk);
 }//end
 
 

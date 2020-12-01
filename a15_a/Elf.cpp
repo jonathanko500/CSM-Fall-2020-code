@@ -5,9 +5,8 @@ using namespace std;
 //default constructor
 Elf::Elf()
 {//start
-    type = 3;
-    strength = 10;
-    hitpoints = 10;
+    Creature();
+    setType(3);
 }//end
 
 
@@ -19,6 +18,6 @@ Elf::Elf()
 Elf::Elf(int atk, int hp)
     : Elf()
 {//start
-    strength = atk;
-    hitpoints = hp;
+    setHitpoints(hp);
+    setStrength(atk);
 }//end

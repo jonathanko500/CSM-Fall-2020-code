@@ -5,9 +5,7 @@ using namespace std;
 //default constructor
 Demon::Demon()
 {//start
-    type = 1;
-    strength = 10;
-    hitpoints = 10;
+    Creature();
 }//end
 
 
@@ -17,8 +15,8 @@ Demon::Demon()
 
 //paramterized constructor
 Demon::Demon(int atk, int hp)
-    : Creature()
+    : Demon()
 {//start
-    strength = atk;
-    hitpoints = hp;
+    setHitpoints(hp);
+    setStrength(atk);
 }//end
