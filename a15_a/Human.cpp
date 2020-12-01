@@ -23,30 +23,4 @@ namespace cs_creature
         setHitpoints(hp);
         setStrength(atk);
     }//end
-
-
-
-
-
-
-    //get species
-    string Human::getSpecies() const
-    {//start
-        return "Human";
-    }//end
-
 }//end namespace
-
-
-
-
-
-
-
-
-
-
-
-
-
-

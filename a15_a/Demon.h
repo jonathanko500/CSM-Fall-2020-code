@@ -10,6 +10,7 @@ namespace cs_creature
 	public:
 		Demon();
 		Demon(int atk, int hp);
+		int getDamage() const;
 	};//end class
 }//end namespace
 

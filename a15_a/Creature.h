@@ -15,15 +15,16 @@ namespace cs_creature
     public:
         Creature();             // initialize to Human, 10 strength, 10 hitpoints
         Creature(int newType, int newStrength, int newHitpoints);
-        //int getDamage() const;         // returns the amount of damage this Creature
+
+        int getDamage() const;         // returns the amount of damage this Creature
                                        // inflicts in one round of combat
         int getStrength() const;
         int getHitpoints() const;
         int getType() const;
+
         void setStrength(const int atk);
         void setHitpoints(const int hp);
         void setType(const int spec);
-        //string getSpecies() const;    // returns the type of the species
         // also include appropriate accessors and mutators    
     };//end class
 

@@ -7,8 +7,8 @@ namespace cs_creature
 {//start namespace
     //default constructor
     Elf::Elf()
+        :Creature()
     {//start
-        Creature();
         setType(3);
     }//end
 
@@ -30,10 +30,22 @@ namespace cs_creature
 
 
 
-    //get species 
-    string Elf::getSpecies() const
+    //get dmg
+    int Elf::getDamage() const
     {//start
-        return "Elf";
+
+        int damage;
+        Creature elf(getStrength(), getHitpoints(), getType());
+
+        elf.setType(getType());
+        damage = elf.getDamage();
+
+        if ((rand() % 2) == 0) {
+            cout << "Magical attack inflicts " << damage << " additional damage points!";
+            damage = damage * 2;
+        }
+
+        return damage;
     }//end
 }//end namespace
 

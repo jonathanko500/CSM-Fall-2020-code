@@ -9,6 +9,7 @@ namespace cs_creature
     Demon::Demon()
     {//start
         Creature();
+        setType(1);
     }//end
 
 
@@ -29,7 +30,23 @@ namespace cs_creature
 
 
 
-  
+    //getDamage
+    int Demon::getDamage() const
+    {//start
+        int damage;
+        Creature demon(getStrength(), getHitpoints(), getType());
+
+        demon.setType(getType());
+
+        damage = demon.getDamage();
+
+        if ((rand() % 100) < 25) {
+            damage = damage + 50;
+            cout << "Demonic attack inflicts 50 additional damage points!" << endl;
+        }
+
+        return damage;
+    }//end
 }//end namespace
 
 

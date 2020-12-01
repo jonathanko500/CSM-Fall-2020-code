@@ -31,9 +31,45 @@ int main()
     cout << "non-default Balrog strength/hitpoints: " << b.getStrength() << "/" << b.getHitpoints() << endl;
     cout << endl;
 
-    //***************
-    cout << h.getSpecies() << endl;
-    cout << e.getSpecies() << endl;
-    //cout << c.getSpecies() << endl;
-    //cout << b.getSpecies() << endl;
+    
+
+
+    
+    //cout << "Examples of " << h.getSpecies() << " damage: " << endl;
+    for (int i = 0; i < 10; i++) {
+        int damage = h.getDamage();
+        cout << " Total damage = " << damage << endl;
+        cout << endl;
+    }
+    cout << endl;
+
+
+
+    //cout << "Examples of " << e.getSpecies() << " damage: " << endl;
+    for (int i = 0; i < 10; i++) {
+        int damage = e.getDamage();
+        cout << " Total damage = " << damage << endl;
+        cout << endl;
+    }
+    cout << endl;
+
+
+
+    //cout << "Examples of " << c.getSpecies() << " damage: " << endl;
+    for (int i = 0; i < 10; i++) {
+        int damage = c.getDamage();
+        cout << " Total damage = " << damage << endl;
+        cout << endl;
+    }
+    cout << endl;
+
+
+
+    //cout << "Examples of " << b.getSpecies() << " damage: " << endl;
+    for (int i = 0; i < 10; i++) {
+        int damage = b.getDamage();
+        cout << " Total damage = " << damage << endl;
+        cout << endl;
+    }
+    
 }//end main

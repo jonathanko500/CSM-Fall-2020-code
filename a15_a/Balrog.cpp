@@ -30,5 +30,21 @@ namespace cs_creature
 
 
 
-    
+    //get dmg
+    int Balrog::getDamage() const
+    {//start
+
+        int damage;
+        Demon balrog(getStrength(), getHitpoints());
+
+        balrog.setType(getType());
+
+        damage = balrog.getDamage();
+
+        int damage2 = (rand() % getStrength()) + 1;
+        cout << "Balrog speed attack inflicts " << damage2 << " additional damage points!";
+        damage = damage + damage2;
+
+        return damage;
+    }//end
 }//end namespace
