@@ -23,6 +23,13 @@ namespace cs_creature
         setStrength(atk);
     }//end
 
+
+
+
+
+
+    
+   
 }//end namespace
 
 

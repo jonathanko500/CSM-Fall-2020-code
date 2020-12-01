@@ -32,5 +32,8 @@ int main()
     cout << endl;
 
     //***************
-   
+    cout << h.getSpecies() << endl;
+    cout << e.getSpecies() << endl;
+    //cout << c.getSpecies() << endl;
+    //cout << b.getSpecies() << endl;
 }//end main

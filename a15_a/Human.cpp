@@ -29,8 +29,11 @@ namespace cs_creature
 
 
 
-    //get dmg
-
+    //get species
+    string Human::getSpecies() const
+    {//start
+        return "Human";
+    }//end
 
 }//end namespace
 

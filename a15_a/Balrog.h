@@ -10,7 +10,7 @@ namespace cs_creature
 	public:
 		Balrog();
 		Balrog(int atk, int hp);
-
+		//string getSpecies() const;
 	};//end class
 }//end namespace
 

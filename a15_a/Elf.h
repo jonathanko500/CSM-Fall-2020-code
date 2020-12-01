@@ -11,7 +11,7 @@ namespace cs_creature
 	public:
 		Elf();
 		Elf(int atk, int hp);
-
+		string getSpecies() const;
 	};//end class
 }//end namespace
 

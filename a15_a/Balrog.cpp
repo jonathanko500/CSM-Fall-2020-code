@@ -24,4 +24,11 @@ namespace cs_creature
         setHitpoints(hp);
         setStrength(atk);
     }//end
+
+
+
+
+
+
+    
 }//end namespace

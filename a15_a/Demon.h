@@ -3,7 +3,6 @@
 #include "Creature.h"
 #include <string>
 
-
 namespace cs_creature
 {//start namespace
 	class Demon : public Creature

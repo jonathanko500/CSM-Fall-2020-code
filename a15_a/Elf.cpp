@@ -25,6 +25,16 @@ namespace cs_creature
         setStrength(atk);
     }//end
 
+
+
+
+
+
+    //get species 
+    string Elf::getSpecies() const
+    {//start
+        return "Elf";
+    }//end
 }//end namespace
 
 
