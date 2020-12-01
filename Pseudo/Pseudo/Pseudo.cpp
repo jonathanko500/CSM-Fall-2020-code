@@ -1,158 +1,76 @@
 #include <iostream>
+#include <cstdlib>
+#include <string>
+#include <ctime>
+#include "Human.h"
+#include "Cyberdemon.h"
+#include "Balrog.h"
+#include "Elf.h"
 
-using namespace std;
+using namespace cs_creature;
 
-class Fraction {
-    private:
-        // Calculates the greates common divisor with
-        // Euclid's algorithm
-        // both arguments have to be positive
-        long long gcd(long long a, long long b) {
-            while (a != b) {
-                if (a > b) {
-                    a -= b;
-                } else {
-                    b -= a;
-                }
-            }
-            return a;
-        }
 
-    public:
-        long long numerator, denominator;
+int main()
+{//start main
 
-        Fraction() {
-            numerator = 0;
-            denominator = 1;
-        }
+    srand(static_cast<unsigned>(time(nullptr)));
 
-        Fraction(long long n, long long d) {
-            if (d==0) {
-                cerr << "Denominator may not be 0." << endl;
-                exit(0);
-            } else if (n == 0) {
-                numerator = 0;
-                denominator = 1;
-            } else {
-                int sign = 1;
-                if (n < 0) {
-                    sign *= -1;
-                    n *= -1;
-                }
-                if (d < 0) {
-                    sign *= -1;
-                    d *= -1;
-                }
+    Human h1;
+    Elf e1;
+    Cyberdemon c1;
+    Balrog b1;
 
-                long long tmp = gcd(n, d);
-                numerator = n/tmp*sign;
-                denominator = d/tmp;
-            }
-        }
+    Human h(20, 30);
+    Elf e(40, 50);
+    Cyberdemon c(60, 70);
+    Balrog b(80, 90);
 
-        operator int() {return (numerator)/denominator;}
-        operator float() {return ((float)numerator)/denominator;}
-        operator double() {return ((double)numerator)/denominator;}
-};
 
-Fraction operator+(const Fraction& lhs, const Fraction& rhs) {
-    Fraction tmp(lhs.numerator*rhs.denominator
-                +rhs.numerator*lhs.denominator,
-                lhs.denominator*rhs.denominator);
-    return tmp;
-}
+    cout << "default Human strength/hitpoints: " << h1.getStrength() << "/" << h1.getHitpoints() << endl;
+    cout << "default Elf strength/hitpoints: " << e1.getStrength() << "/" << e1.getHitpoints() << endl;
+    cout << "default Cyberdemon strength/hitpoints: " << c1.getStrength() << "/" << c1.getHitpoints() << endl;
+    cout << "default Balrog strength/hitpoints: " << b1.getStrength() << "/" << b1.getHitpoints() << endl;
+    cout << "non-default Human strength/hitpoints: " << h.getStrength() << "/" << h.getHitpoints() << endl;
+    cout << "non-default Elf strength/hitpoints: " << e.getStrength() << "/" << e.getHitpoints() << endl;
+    cout << "non-default Cyberdemon strength/hitpoints: " << c.getStrength() << "/" << c.getHitpoints() << endl;
+    cout << "non-default Balrog strength/hitpoints: " << b.getStrength() << "/" << b.getHitpoints() << endl;
+    cout << endl << endl;
 
-Fraction operator+=(Fraction& lhs, const Fraction& rhs) {
-    Fraction tmp(lhs.numerator*rhs.denominator
-                +rhs.numerator*lhs.denominator,
-                lhs.denominator*rhs.denominator);
-    lhs = tmp;
-    return lhs;
-}
-
-Fraction operator-(const Fraction& lhs, const Fraction& rhs) {
-    Fraction tmp(lhs.numerator*rhs.denominator
-                -rhs.numerator*lhs.denominator,
-                lhs.denominator*rhs.denominator);
-    return tmp;
-}
-
-Fraction operator-=(Fraction& lhs, const Fraction& rhs) {
-    Fraction tmp(lhs.numerator*rhs.denominator
-                -rhs.numerator*lhs.denominator,
-                lhs.denominator*rhs.denominator);
-    lhs = tmp;
-    return lhs;
-}
-
-Fraction operator*(const Fraction& lhs, const Fraction& rhs) {
-    Fraction tmp(lhs.numerator*rhs.numerator,
-               lhs.denominator*rhs.denominator);
-    return tmp;
-}
-
-Fraction operator*=(Fraction& lhs, const Fraction& rhs) {
-    Fraction tmp(lhs.numerator*rhs.numerator,
-               lhs.denominator*rhs.denominator);
-    lhs = tmp;
-    return lhs;
-}
-
-Fraction operator*(int lhs, const Fraction& rhs) {
-    Fraction tmp(lhs*rhs.numerator,rhs.denominator);
-    return tmp;
-}
-
-Fraction operator*(const Fraction& rhs, int lhs) {
-    Fraction tmp(lhs*rhs.numerator,rhs.denominator);
-    return tmp;
-}
-
-Fraction operator/(const Fraction& lhs, const Fraction& rhs) {
-    Fraction tmp(lhs.numerator*rhs.denominator,
-                 lhs.denominator*rhs.numerator);
-    return tmp;
-}
-
-std::ostream& operator<<(std::ostream &strm, const Fraction &a) {
-    if (a.denominator == 1) {
-        strm << a.numerator;
-    } else {
-        strm << a.numerator << "/" << a.denominator;
+    cout << "Examples of " << h.getType() << " damage: " << endl;
+    for (int i = 0; i < 10; i++) {
+        int damage = h.getDamage();
+        cout << " Total damage = " << damage << endl;
+        cout << endl;
     }
-    return strm;
-}
+    cout << endl;
 
-int main() {
-    Fraction a(1,3);
-    Fraction b(3,28);
-    Fraction c;
 
-    c = a + b;
-    cout << c << "\t(should be 37/84)" << endl;
 
-    c = a - b;
-    cout << c << "\t(should be 19/84)" << endl;
+    cout << "Examples of " << e.getType() << " damage: " << endl;
+    for (int i = 0; i < 10; i++) {
+        int damage = e.getDamage();
+        cout << " Total damage = " << damage << endl;
+        cout << endl;
+    }
+    cout << endl;
 
-    c = a * b;
-    cout << c << "\t(should be 1/28)" << endl;
 
-    c = a / b;
-    cout << c << "\t(should be 28/9)" << endl;
 
-    c = -1 * b;
-    cout << c << "\t(should be -3/28)" << endl;
+    cout << "Examples of " << c.getType() << " damage: " << endl;
+    for (int i = 0; i < 10; i++) {
+        int damage = c.getDamage();
+        cout << " Total damage = " << damage << endl;
+        cout << endl;
+    }
+    cout << endl;
 
-    c = b * (-1);
-    cout << c << "\t(should be -3/28)" << endl;
 
-    c = Fraction(-100,3);
-    cout <<    (int)c << "\t(should be -33)" << endl;
-    cout <<  (float)c << "\t(should be -33.3...)" << endl;
-    cout << (double)c << "\t(should be -33.3...)" << endl;
 
-    a -= b;
-    cout << a << "\t(should be 19/84)" << endl;
-
-    return 0;
-}
+    cout << "Examples of " << b.getType() << " damage: " << endl;
+    for (int i = 0; i < 10; i++) {
+        int damage = b.getDamage();
+        cout << " Total damage = " << damage << endl;
+        cout << endl;
+    }
+    cout << endl;
+}//end main
