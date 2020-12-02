@@ -24,12 +24,36 @@
     <ClCompile Include="Human.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Demon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cyberdemon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Balrog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Elf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Creature.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Human.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Demon.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cyberdemon.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Balrog.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Elf.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

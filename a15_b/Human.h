@@ -11,6 +11,7 @@ namespace cs_creature
 	public:
 		Human();
 		Human(int atk, int hp);
+		string getSpecies() const;
 	};//end class
 }//end namespace
 
