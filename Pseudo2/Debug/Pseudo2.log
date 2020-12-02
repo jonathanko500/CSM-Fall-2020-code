@@ -1,0 +1,16 @@
+﻿  Creature.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.h(23,26): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.h(23,26): error C2059: syntax error: '('
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.h(23,34): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.cpp(86,22): error C2039: 'getSpecies': is not a member of 'cs_creature::Creature'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.h(7): message : see declaration of 'cs_creature::Creature'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.cpp(87,5): error C2270: 'getSpecies': modifiers not allowed on nonmember functions
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.cpp(88,17): error C2065: 'type': undeclared identifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.cpp(89,9): error C2050: switch expression not integral
+  Pseudo2.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.h(23,26): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.h(23,26): error C2059: syntax error: '('
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.h(23,34): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Pseudo2.cpp(11,12): error C2039: 'getSpecies': is not a member of 'cs_creature::Creature'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\Pseudo2\Creature.h(7): message : see declaration of 'cs_creature::Creature'
+  Generating Code...
