@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <string>
 #include "Creature.h"
 using namespace std;
 

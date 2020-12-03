@@ -20,6 +20,8 @@ namespace cs_creature
         int getStrength() const;
         int getHitpoints() const;
         int getType() const;
+        virtual string getSpecies() const;
+
 
         void setStrength(const int atk);
         void setHitpoints(const int hp);
