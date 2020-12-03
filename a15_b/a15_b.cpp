@@ -6,70 +6,72 @@
 
 using namespace cs_creature;
 
+void battleArena(Creature& Creature1, Creature& Creature2);
+
 int main()
 {//start main
     srand(static_cast<unsigned>(time(nullptr)));
 
-    Human h1;
-    Elf e1;
-    Cyberdemon c1;
-    Balrog b1;
+    Elf e(50, 50);
+    Balrog b(50, 50);
 
-    Human h(20, 30);
-    Elf e(40, 50);
-    Cyberdemon c(60, 70);
-    Balrog b(80, 90);
-
-    cout << "default Human strength/hitpoints: " << h1.getStrength() << "/" << h1.getHitpoints() << endl;
-    cout << "default Elf strength/hitpoints: " << e1.getStrength() << "/" << e1.getHitpoints() << endl;
-    cout << "default Cyberdemon strength/hitpoints: " << c1.getStrength() << "/" << c1.getHitpoints() << endl;
-    cout << "default Balrog strength/hitpoints: " << b1.getStrength() << "/" << b1.getHitpoints() << endl;
-    cout << "****************" << endl;
-    cout << "non-default Human strength/hitpoints: " << h.getStrength() << "/" << h.getHitpoints() << endl;
-    cout << "non-default Elf strength/hitpoints: " << e.getStrength() << "/" << e.getHitpoints() << endl;
-    cout << "non-default Cyberdemon strength/hitpoints: " << c.getStrength() << "/" << c.getHitpoints() << endl;
-    cout << "non-default Balrog strength/hitpoints: " << b.getStrength() << "/" << b.getHitpoints() << endl;
-    cout << endl;
-
-    
-
-
-    
-    cout << "Examples of " << h.getSpecies() << " damage: " << endl;
-    for (int i = 0; i < 10; i++) {
-        int damage = h.getDamage();
-        cout << " Total damage = " << damage << endl;
-        cout << endl;
-    }
-    cout << endl;
-
-
-
-    cout << "Examples of " << e.getSpecies() << " damage: " << endl;
-    for (int i = 0; i < 10; i++) {
-        int damage = e.getDamage();
-        cout << " Total damage = " << damage << endl;
-        cout << endl;
-    }
-    cout << endl;
-
-
-
-    cout << "Examples of " << c.getSpecies() << " damage: " << endl;
-    for (int i = 0; i < 10; i++) {
-        int damage = c.getDamage();
-        cout << " Total damage = " << damage << endl;
-        cout << endl;
-    }
-    cout << endl;
-
-
-
-    cout << "Examples of " << b.getSpecies() << " damage: " << endl;
-    for (int i = 0; i < 10; i++) {
-        int damage = b.getDamage();
-        cout << " Total damage = " << damage << endl;
-        cout << endl;
-    }
+        battleArena(e, b);
     
 }//end main
+
+
+
+
+
+
+
+//battle arean
+void battleArena(Creature& Creature1, Creature& Creature2)
+{//start
+    //variales for creature 1
+    int HPx, DMGx, TakenX;
+    //variales for creature 2
+    int HPy, DMGy, TakenY;
+    //turn counter
+    int turn = 1;
+    do
+    {//start loop
+        cout << "Turn " << turn << endl;
+
+        //set variables
+
+        //dmg
+        DMGx = Creature1.getDamage();
+        DMGy = Creature2.getDamage();
+
+        //hp
+        HPx = Creature1.getHitpoints();
+        HPy = Creature2.getHitpoints();
+
+        //dmg inflict + set New HP for Creature1
+        TakenX = HPx - DMGy;
+        Creature1.setHitpoints(TakenX);
+        cout << Creature1.getSpecies() << " now has " << Creature1.getHitpoints() << " HP" << endl;
+
+        //dmg inflict + set New HP Creature 2
+        TakenY = HPy - DMGx;
+        Creature2.setHitpoints(TakenY);
+        cout << Creature2.getSpecies() << " now has " << Creature2.getHitpoints() << " HP" << endl;
+
+        //inc turn counter
+        turn++;
+
+        //turn divider
+        cout << "********************" << endl;
+
+    } while (HPx >= 0 || HPy >= 0);//end
+
+    if (HPx <= 0)
+    {
+        cout << Creature1.getSpecies() << " dies and " << Creature2.getSpecies() << " wins!" << endl;
+    }
+    if (HPy <= 0)
+    {
+        cout << Creature2.getSpecies() << " dies and " << Creature1.getSpecies() << " wins!" << endl;
+    }
+}//end

@@ -47,7 +47,7 @@ namespace cs_creature
 
         //add additional dmg
         int damage2 = (rand() % getStrength()) + 1;
-        cout << "Balrog speed attack inflicts " << damage2 << " additional damage points!";
+        cout << "Balrog speed attack inflicts " << damage2 << " additional damage points!" << endl;
         damage = damage + damage2;
 
         return damage;
@@ -59,8 +59,8 @@ namespace cs_creature
 
 
     //getspecies
-    string Demon::getSpecies() const
+    string Balrog::getSpecies() const
     {
-        return "Demon";
+        return "Balrog";
     }
 }//end namespace

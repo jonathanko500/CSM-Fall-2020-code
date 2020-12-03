@@ -48,7 +48,7 @@ namespace cs_creature
         //add additonal dmg
         if ((rand() % 2) == 0)
         {
-            cout << "Magical attack inflicts " << damage << " additional damage points!";
+            cout << "Magical attack inflicts " << damage << " additional damage points!" << endl;
             damage = damage * 2;
         }
 

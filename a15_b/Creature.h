@@ -15,12 +15,12 @@ namespace cs_creature
         Creature();             // initialize to Human, 10 strength, 10 hitpoints
         Creature(int newType, int newStrength, int newHitpoints);
 
-        int getDamage() const;         // returns the amount of damage this Creature
+        virtual int getDamage() const;         // returns the amount of damage this Creature
                                        // inflicts in one round of combat
         int getStrength() const;
         int getHitpoints() const;
         int getType() const;
-        virtual string getSpecies() const;
+        virtual std::string getSpecies() const;
 
         void setStrength(const int atk);
         void setHitpoints(const int hp);
