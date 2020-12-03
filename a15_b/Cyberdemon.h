@@ -11,6 +11,7 @@ namespace cs_creature
 	public:
 		Cyberdemon();
 		Cyberdemon(int atk, int hp);
+		string getSpecies() const;
 	};//end class
 }//end namespace
 

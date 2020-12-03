@@ -11,6 +11,7 @@ namespace cs_creature
 		Balrog();
 		Balrog(int atk, int hp);
 		int getDamage() const;
+		string getSpecies() const;
 	};//end class
 }//end namespace
 

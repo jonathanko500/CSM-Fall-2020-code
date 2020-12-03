@@ -21,5 +21,17 @@ namespace cs_creature
     {//start
         setHitpoints(hp);
         setStrength(atk);
-    }//end    
+    }//end
+
+
+
+
+
+
+    //getspecies
+    //getspecies
+    string Cyberdemon::getSpecies() const
+    {
+        return "Cyberdemon";
+    }
 }//end namespace

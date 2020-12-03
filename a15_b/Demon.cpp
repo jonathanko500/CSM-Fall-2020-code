@@ -51,7 +51,18 @@ namespace cs_creature
         }
 
         return damage;
-    }//end    
+    }//end
+
+
+
+
+
+
+    //getspecies
+    string Demon::getSpecies() const
+    {
+        return "Demon";
+    }
 }//end namespace
 
 

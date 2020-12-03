@@ -55,7 +55,7 @@ int main()
 
 
 
-    //cout << "Examples of " << c.getSpecies() << " damage: " << endl;
+    cout << "Examples of " << c.getSpecies() << " damage: " << endl;
     for (int i = 0; i < 10; i++) {
         int damage = c.getDamage();
         cout << " Total damage = " << damage << endl;
@@ -65,7 +65,7 @@ int main()
 
 
 
-    //cout << "Examples of " << b.getSpecies() << " damage: " << endl;
+    cout << "Examples of " << b.getSpecies() << " damage: " << endl;
     for (int i = 0; i < 10; i++) {
         int damage = b.getDamage();
         cout << " Total damage = " << damage << endl;

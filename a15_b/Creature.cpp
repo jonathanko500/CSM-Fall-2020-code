@@ -75,7 +75,23 @@ namespace cs_creature
     int Creature::getType() const
     {//start
         return type;
-    }//end 
+    }//end
+
+
+
+
+
+
+    //get species
+    string Creature::getSpecies() const {
+        switch (type) {
+        case 0: return "Human";
+        case 1: return "Cyberdemon";
+        case 2: return "Balrog";
+        case 3: return "Elf";
+        }
+        return "unknown";
+    }
 
 
 

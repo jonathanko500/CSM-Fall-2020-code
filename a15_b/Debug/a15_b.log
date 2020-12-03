@@ -1,2 +1,58 @@
-﻿  Demon.cpp
-  a15_b.vcxproj -> C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Debug\a15_b.exe
+﻿  a15_b.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,34): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,35): error C2059: syntax error: ')'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,42): error C2238: unexpected token(s) preceding ';'
+  Balrog.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,34): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,35): error C2059: syntax error: ')'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,42): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,20): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,20): error C2059: syntax error: '('
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Balrog.h(14,20): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Balrog.h(14,20): error C2059: syntax error: '('
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Balrog.h(14,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Balrog.cpp(62,19): error C2039: 'getSpecies': is not a member of 'cs_creature::Demon'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(8): message : see declaration of 'cs_creature::Demon'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Balrog.cpp(63,5): error C2270: 'getSpecies': modifiers not allowed on nonmember functions
+  Creature.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,34): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,35): error C2059: syntax error: ')'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,42): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.cpp(86,22): error C2039: 'getSpecies': is not a member of 'cs_creature::Creature'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(7): message : see declaration of 'cs_creature::Creature'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.cpp(86,41): error C2270: 'getSpecies': modifiers not allowed on nonmember functions
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.cpp(87,17): error C2065: 'type': undeclared identifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.cpp(87,23): error C2050: switch expression not integral
+  Cyberdemon.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,34): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,35): error C2059: syntax error: ')'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,42): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,20): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,20): error C2059: syntax error: '('
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Cyberdemon.h(14,20): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Cyberdemon.h(14,20): error C2059: syntax error: '('
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Cyberdemon.h(14,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Cyberdemon.cpp(33,24): error C2039: 'getSpecies': is not a member of 'cs_creature::Cyberdemon'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Cyberdemon.h(9): message : see declaration of 'cs_creature::Cyberdemon'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Cyberdemon.cpp(34,5): error C2270: 'getSpecies': modifiers not allowed on nonmember functions
+  Demon.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,34): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,35): error C2059: syntax error: ')'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,42): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,20): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,20): error C2059: syntax error: '('
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(14,28): error C2238: unexpected token(s) preceding ';'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.cpp(62,19): error C2039: 'getSpecies': is not a member of 'cs_creature::Demon'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.h(8): message : see declaration of 'cs_creature::Demon'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Demon.cpp(63,5): error C2270: 'getSpecies': modifiers not allowed on nonmember functions
+  Elf.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,34): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,35): error C2059: syntax error: ')'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,42): error C2238: unexpected token(s) preceding ';'
+  Human.cpp
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,34): error C3646: 'getSpecies': unknown override specifier
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,35): error C2059: syntax error: ')'
+C:\Users\Jonathan\Desktop\CSM-Fall-2020-code\a15_b\Creature.h(23,42): error C2238: unexpected token(s) preceding ';'
+  Generating Code...
