@@ -28,7 +28,7 @@ int main()
 //battle arean
 void battleArena(Creature& Creature1, Creature& Creature2)
 {//start
-    //variales for creature 1
+     //variales for creature 1
     int HPx, DMGx, TakenX;
     //variales for creature 2
     int HPy, DMGy, TakenY;
@@ -41,8 +41,12 @@ void battleArena(Creature& Creature1, Creature& Creature2)
         //set variables
 
         //dmg
+        cout << Creature1.getSpecies() << " atk " << Creature2.getSpecies() << endl;
         DMGx = Creature1.getDamage();
+        cout << endl;
+        cout << Creature2.getSpecies() << " atk " << Creature1.getSpecies() << endl;
         DMGy = Creature2.getDamage();
+        cout << endl;
 
         //hp
         HPx = Creature1.getHitpoints();
@@ -64,7 +68,7 @@ void battleArena(Creature& Creature1, Creature& Creature2)
         //turn divider
         cout << "********************" << endl;
 
-    } while (HPx >= 0 || HPy >= 0);//end
+    } while (HPx > 0 && HPy > 0);//end
 
     if (HPx <= 0)
     {
