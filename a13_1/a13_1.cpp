@@ -59,14 +59,14 @@ void BasicTest()
     const MyString s1("abcdefghijklmnopqsrtuvwxyz");
     cout << "Whole string is " << s1 << endl;
     cout << "now char by char: ";
-    for (int i = 0; i < s1.Size(); i++) {
+    for (int i = 0; i < s1.length(); i++) {
         cout << s1[i];
     }
 
     cout << endl << "----- Testing access to characters (using non-const)" << endl;
     MyString s2("abcdefghijklmnopqsrtuvwxyz");
     cout << "Start with " << s2;
-    for (int i = 0; i < s2.Size(); i++) {
+    for (int i = 0; i < s2.length(); i++) {
         s2[i] = toupper(s2[i]);
     }
     cout << " and convert to " << s2 << endl;
@@ -175,86 +175,3 @@ void CopyTest()
 }
 
 
-/*
-int main()
-{//start main
-
-	//construct MyString object
-	MyString x;
-	MyString y("hunter");
-
-	
-	//test function to return num of characters in word
-	cout << x << " = x  has " << x.Size() << " characters" << endl;
-	cout << y << " = y has " << y.Size() << " characters" << endl;
-
-	//test to construct object w/ const string
-	const MyString w("wizards");
-	MyString z(w);
-	cout << z << " = z has " << z.Size() << " characters" << endl;
-
-	//test [] operator
-	y[0] = 'H';
-	y[1] = 'U';
-	cout << y << " = y has " << y.Size() << " characters" << endl;
-
-	//test = operator
-	x = z;
-	cout << x << " = x has " << x.Size() << " characters" << endl;
-
-	//test <
-	if (x < y)
-	{
-		cout << " x < y" << endl;
-	}
-	else
-	{
-		cout << " x !< y" << endl;
-	}
-	//test <=
-	if (x <= y)
-	{
-		cout << " x <= y" << endl;
-	}
-	else
-	{
-		cout << " x !<= y" << endl;
-	}
-	//test >
-	if (x > y)
-	{
-		cout << " x > y" << endl;
-	}
-	else
-	{
-		cout << " x !> y" << endl;
-	}
-	//test <=
-	if (x >= y)
-	{
-		cout << " x >= y" << endl;
-	}
-	else
-	{
-		cout << " x !>= y" << endl;
-	}
-	//test ==
-	if (x == y)
-	{
-		cout << " x = y" << endl;
-	}
-	else
-	{
-		cout << " x != y" << endl;
-	}
-	//test !=
-	if (x != y)
-	{
-		cout << " x != y" << endl;
-	}
-	else
-	{
-		cout << " x == y" << endl;
-	}
-}//end main
-*/

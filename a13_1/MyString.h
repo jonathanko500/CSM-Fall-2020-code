@@ -74,35 +74,27 @@ namespace cs_mystring
 {//start namespace
 	class MyString
 	{//start class
-		//declare private varibles
-		private:
-			int len;
-			char* word;
+	public:
+		MyString(const char* inString);
+		MyString();
+		MyString(const MyString& copyMe);
+		~MyString();
 
-		//declare functions + constructor + operator overload
-		public:
-			//function 
-			//constructors
-			MyString();
-			MyString(const char* term);
-			MyString(const MyString& term);//big 3 copy constructor
-			//function
-			int Size();
-			const int Size() const;
-			~MyString();//big 3 destructor
-			//operator overload
-			friend std::ostream& operator<<(std::ostream& sign, const MyString& word);
-			char operator[](int size) const;
-			char& operator[](int size);
-			MyString operator= (const MyString& term);//big 3 assignment operator
-			//inequality overload
-			friend bool operator< (const MyString x, const MyString y);
-			friend bool operator<= (const MyString x, const MyString y);
-			friend bool operator> (const MyString x, const MyString y);
-			friend bool operator>= (const MyString x, const MyString y);
-			friend bool operator== (const MyString x, const MyString y);
-			friend bool operator!= (const MyString x, const MyString y);
-	};//end claass
+		friend std::ostream& operator<<(std::ostream& out, const MyString& printMe);
+		char operator[] (int index) const;
+		char& operator[](int index);
+
+		friend bool operator<(const MyString& left, const MyString& right);
+		friend bool operator>(const MyString& left, const MyString& right);
+		friend bool operator<=(const MyString& left, const MyString& right);
+		friend bool operator>=(const MyString& left, const MyString& right);
+		friend bool operator==(const MyString& left, const MyString& right);
+		friend bool operator!=(const MyString& left, const MyString& right);
+		MyString operator=(const MyString& right);
+		int length() const;
+	private:
+		char* str;
+	};//end class
 }//end namespace
 
 #endif
