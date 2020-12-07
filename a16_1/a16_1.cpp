@@ -53,7 +53,6 @@ void reverseWithinBounds(char list[], int start, int end)
 
 void reverseCstring(char list[])
 {//start
-
 	reverseWithinBounds(list, 0, 4);
 }//end
 
