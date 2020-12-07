@@ -28,3 +28,5 @@ namespace cs_mystring
 		char* str;
 	};//end class
 }//end namespace
+
+#endif
