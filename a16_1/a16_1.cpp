@@ -24,13 +24,19 @@ int main()
 {//start
 	char list[5] = { 'A','B','C','D','E' };
 	reverseCstring(list);
-	for (int i = 0; i < 5; i++)
+	int size = sizeof(list) / sizeof(list[0]);
+	for (int i = 0; i < size; i++)
 	{
 		cout << list[i] << endl;
 	}
 }//main
 
 
+
+
+
+
+//switches array elements within boundaries
 void reverseWithinBounds(char list[], int start, int end)
 {//start
 	if (start >= end)
@@ -51,9 +57,11 @@ void reverseWithinBounds(char list[], int start, int end)
 
 
 
+//reverse the entire string
 void reverseCstring(char list[])
 {//start
-	reverseWithinBounds(list, 0, 4);
+	int size = sizeof(list) / sizeof(list[0]);
+	reverseWithinBounds(list, 0, size);
 }//end
 
 
