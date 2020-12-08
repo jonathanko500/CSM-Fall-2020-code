@@ -1,7 +1,20 @@
+/*
+Jonathan Ko
+12/7/2020
+CIS 278
+Assignment 16.2
+
+This program is called palindrome
+
+The compiler is given an array of array of characters..
+The compiler uses a recursive function that switches the order of the array into the reverse order
+*/
+
 #include "MyString.h"
 #include <cctype>
 #include <iostream>
 #include <string>
+#include <cassert>
 using namespace std;
 using namespace cs_mystring;
 
@@ -20,7 +33,6 @@ int main()
 	{
 		cout << x << " is not a pali" << endl;
 	}
-
 }//end main
 
 
