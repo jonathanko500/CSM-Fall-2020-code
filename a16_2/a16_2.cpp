@@ -1,5 +1,5 @@
 #include "MyString.h"
-#include <cctype>      // for toupper()
+#include <cctype>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -31,10 +31,15 @@ int main()
 bool isAPalindrome(MyString word,int start, int end)
 {//start
 	if (start >= end)
+	{
 		return true;
+	}
+		
 
 	if (word[start] != word[end])
+	{
 		return false;
-
+	}
+		
 	return isAPalindrome(word, start + 1, end - 1);
 }//end

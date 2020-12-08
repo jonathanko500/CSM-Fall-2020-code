@@ -7,23 +7,31 @@ namespace cs_mystring
 	class MyString
 	{//start class
 	public:
-		MyString(const char* inString);
-		MyString();
-		MyString(const MyString& copyMe);
-		~MyString();
+        static const int MAX_INPUT_SIZE = 127;
 
-		friend std::ostream& operator<<(std::ostream& out, const MyString& printMe);
-		char operator[] (int index) const;
-		char& operator[](int index);
+        MyString(const char* inString);
+        MyString();
+        MyString(const MyString& copyMe);
+        ~MyString();
 
-		friend bool operator<(const MyString& left, const MyString& right);
-		friend bool operator>(const MyString& left, const MyString& right);
-		friend bool operator<=(const MyString& left, const MyString& right);
-		friend bool operator>=(const MyString& left, const MyString& right);
-		friend bool operator==(const MyString& left, const MyString& right);
-		friend bool operator!=(const MyString& left, const MyString& right);
-		MyString operator=(const MyString& right);
-		int length() const;
+        friend std::ostream& operator<<(std::ostream& out, const MyString& printMe);
+        friend std::istream& operator>>(std::istream& in, MyString& readMe);
+
+        void read(std::istream& in, char delimeter);
+
+        char operator[] (int index) const;
+        char& operator[](int index);
+        friend bool operator<(const MyString& left, const MyString& right);
+        friend bool operator>(const MyString& left, const MyString& right);
+        friend bool operator<=(const MyString& left, const MyString& right);
+        friend bool operator>=(const MyString& left, const MyString& right);
+        friend bool operator==(const MyString& left, const MyString& right);
+        friend bool operator!=(const MyString& left, const MyString& right);
+        MyString operator=(const MyString& right);
+        friend MyString operator+(const MyString& left, const MyString& right);
+        MyString operator+=(const MyString& right);
+
+        int length() const;
 	private:
 		char* str;
 	};//end class
