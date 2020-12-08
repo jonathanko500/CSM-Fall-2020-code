@@ -1,20 +1,6 @@
 //client
-/*
-Jonathan Ko
-11/23/2020
-CIS 278
-Assignment #14
-This program is called MyString
-This program uses dynamic memory and creating objects of strings/chars
-The program creates an object that lets the compiler determine the number of characters in that string
-The users is also allowed to
-assign other of similar object with the = operator
-assign 1 new characters in the string obj
-the object is compatible with <<
-copy an object
-*/
 #include <fstream>
-#include <cctype>      // for toupper()
+#include <cctype>// for toupper()
 #include <string>     
 #include <cassert>
 #include <iostream>
@@ -104,7 +90,7 @@ void BasicTest()
     const MyString s1("abcdefghijklmnopqsrtuvwxyz");
     cout << "Whole string is " << s1 << endl;
     cout << "now char by char: ";
-    stringLength = s1.Size();
+    stringLength = s1.length();
     for (int i = 0; i < stringLength; i++) {
         cout << s1[i];
     }
@@ -114,7 +100,7 @@ void BasicTest()
     cout << endl << "----- Testing access to characters (using non-const)" << endl;
     MyString s2("abcdefghijklmnopqsrtuvwxyz");
     cout << "Start with " << s2;
-    stringLength = s2.Size();
+    stringLength = s2.length();
     for (int i = 0; i < stringLength; i++) {
         s2[i] = toupper(s2[i]);
     }
@@ -181,18 +167,18 @@ void ConcatTest()
     { MyString("outrageous"), MyString("milk"), MyString(""),
     MyString("cow"), MyString("bell") };
 
-    /*
+    
     for (int i = 0; i < 4; i++) {
         cout << s[i] << " + " << s[i + 1] << " = " << s[i] + s[i + 1] << endl;
     }
-    */
+    
 
     cout << "\n----- Testing concatentation between MyString and char *\n";
 
     const MyString a("abcde");
     const char* b = "XYZ";
-    //cout << a << " + " << b << " = " << a + b << endl;
-    //cout << b << " + " << a << " = " << b + a << endl;
+    cout << a << " + " << b << " = " << a + b << endl;
+    cout << b << " + " << a << " = " << b + a << endl;
 
     cout << "\n----- Testing shorthand concat/assign on MyStrings\n";
 
@@ -266,56 +252,3 @@ void CopyTest()
     cout << "after assign,  val is " << val << endl;
 
 }
-
-
-
-/*
-int main()
-{//start main
-
-	//construct MyString object
-	MyString x;
-	MyString y("hunter");
-
-
-	//test function to return num of characters in word
-	cout << x << " = x has " << x.Size() << " characters" << endl;
-	cout << y << " = y has " << y.Size() << " characters" << endl;
-
-	//test to construct object w/ const string
-	const MyString w("wizards");
-	cout << w.Size() << endl;
-	MyString z(w);
-	cout << z << " = z has " << z.Size() << " characters" << endl;
-
-	//test [] operator
-	y[0] = 'H';
-	y[1] = 'U';
-	cout << y << " = y has " << y.Size() << " characters" << endl;;
-
-	//test = operator
-	x = z;
-	cout << x << " = x has " << x.Size() << " characters" << endl;
-
-	//test + operator
-	cout << y + y << endl;
-
-
-
-	//test read
-	MyString s;
-    cout << endl << "----- now, line by line" << endl;
-    ifstream in2("mystring.txt");
-    assert(in2);
-    while (in2.peek() == '#') {
-        in2.ignore(128, '\n');
-    }
-    s.read(in2, '\n');
-    while (in2) {
-        cout << "Read string = " << s << endl;
-        s.read(in2, '\n');
-    }
-    in2.close();
-
-}//end main
-*/

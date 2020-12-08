@@ -1,321 +1,232 @@
-//implementation
-/*
-	Class Invariant:
-	a MyString object has 2 data members: length of word and pointer pointing at a string
-	constructrs that make the object
-		default
-		regular
-		copy
-	Size() that returns teh length of word
-	overloaded opertor << that allows MyString object to be printed
-	overloaded [] to allow a change of 1 character
-	~MyString deallocates memory
-*/
 #pragma warning(disable:4996)
-#include <iostream>
-#include <cassert>
-#include <cstring>
 #include "MyString.h"
+#include <iostream>
+#include <cstring>
+#include <cassert>
 using namespace std;
+
+
 
 namespace cs_mystring
 {//start namespace
+    MyString::MyString(const char* inString)
+    {
+        str = new char[strlen(inString) + 1];
+        strcpy(str, inString);
+    }
 
-	//defalut constructor
-	MyString::MyString()
-	{//start
-		word = new char[1];
-		strcpy(word, "");
-	}//end
 
 
 
 
 
 
-	//constructor
-	MyString::MyString(const char* term)
-	{//start
-		word = new char[strlen(term) + 1];
-		strcpy(word, term);
-	}//end
 
+    MyString::MyString()
+    {
+        str = new char[1];
+        strcpy(str, "");
+    }
 
 
 
 
 
-	
-	 
-	 //function that copies const c-string 
-	//big 3
-	MyString::MyString(const MyString& term)
-	{//start
-		word = new char[strlen(term.word) + 1];
-		strcpy(word, term.word);
-	}//end
 
 
+    MyString::MyString(const MyString& copyMe)
+    {
+        str = new char[strlen(copyMe.str) + 1];
+        strcpy(str, copyMe.str);
+    }
 
 
 
-	//functions
-	 //function that return numb characters
-	int MyString::Size()
-	{//start
-		return len;
-	}//end
 
 
 
+    MyString::~MyString()
+    {
+        delete [] str;
+    }
 
 
 
-	 //function that return numb const characters 
-	const int MyString::Size() const
-	{//start
-		return len;
-	}//end
 
 
 
 
+    ostream& operator<<(ostream& out, const MyString& printMe)
+    {
+        out << printMe.str;
+        return out;
+    }
 
 
-	//destructor
-	//big 3
-	MyString :: ~MyString()
-	{
-		delete[] word;
-	}
 
 
 
 
 
+    istream& operator>>(istream& in, MyString& readMe)
+    {
+        delete [] readMe.str;
+        char tempStr[MyString::MAX_INPUT_SIZE + 1];
+        in >> tempStr;
+        readMe.str = new char[strlen(tempStr) + 1];
+        strcpy(readMe.str, tempStr);
+        return in;
+    }
 
-	//read
-	void MyString::read(std::istream& in, char stop)
-	{//start
-		char temp[MyString::MAX_INPUT_SIZE + 1];
-		in.getline(temp, MyString::MAX_INPUT_SIZE, stop);
-		MyString term;
-		term.len = strlen(temp);
-		delete[] term.word;
-		term.word = new char[strlen(temp) + 1];
-		strcpy(term.word, temp);
-		cout << term.word;
-	}//end
-	 
-	 
-	 
-	 
-	 
-	 //overload operators
 
-	//overload <<	
-	ostream& operator<<(std::ostream& sign, const MyString& word)
-	{//start
-		sign << word.word;
-		return sign;
-	}//end
 
 
 
 
 
+    void MyString::read(istream& in, char delimiter)
+    {
+        char tempStr[MyString::MAX_INPUT_SIZE + 1];
 
+        in.getline(tempStr, MyString::MAX_INPUT_SIZE + 1, delimiter);
+        delete [] str;
+        str = new char[strlen(tempStr) + 1];
+        strcpy(str, tempStr);
+    }
 
-	//overloaded >>
-	std::istream& operator>>(std::istream& in, MyString& term)
-	{//start
 
-		//skips spaces
-		while (isspace(in.peek()))
-		{
-			in.ignore();
-		}
-		//creates line of MyString characters 
-		char temp[MyString::MAX_INPUT_SIZE + 1];
-		in.getline(temp, MyString::MAX_INPUT_SIZE, ':');
-		delete[] term.word;
-		term.word = new char[strlen(temp) + 1];
-		strcpy(term.word, temp);
 
-		return in;
-	}//end
 
 
 
 
+    char MyString::operator[](int index) const
+    {
+        assert (index >= 0 && index < strlen(str));
+        return str[index];
+    }
 
 
-	//overload [] const
-	char MyString :: operator[](int num) const
-	{//start
-		assert(num >= 0 && num < strlen(word));
-		return word[num];
-	}//end
 
 
 
 
 
+    char& MyString::operator[](int index)
+    {
+        assert (index >= 0 && index < strlen(str));
+        return str[index];
+    }
 
-	//overload [] const
-	char& MyString :: operator[](int num)
-	{//start
-		assert(num >= 0 && num < strlen(word));
-		return word[num];
-	}//end
 
 
 
 
 
 
+    bool operator<(const MyString& left, const MyString& right)
+    {
+        return strcmp(left.str, right.str) < 0;
+    }
 
-	//overload =
-	//big 3
-	MyString MyString :: operator= (const MyString& term)
-	{//start
-		if (this != &term) {
-			len = term.len;
-			delete[] word;
-			word = new char[strlen(term.word) + 1];
-			strcpy(word, term.word);
-		}
-		return *this;
-	}//end
 
 
 
 
+    bool operator>(const MyString& left, const MyString& right)
+    {
+        return strcmp(left.str, right.str) > 0;
+    }
 
 
-	
-	 //overload +
-	MyString MyString :: operator+(const MyString& term)
-	{//start
-		MyString temp;
-		temp.len = len + term.len;
-		delete temp.word;
-		temp.word = new char[temp.len + 1];
-		strcpy(temp.word, term.word);
-		strcat(temp.word, term.word);
-		return temp;
-	}//end
-	 
-	 
-	 
-	 
-	 
-	 //overload +=
-	MyString MyString :: operator+= (const MyString& term)
-	{//start
-		MyString temp;
-		if (this != &term)
-		{			
-			temp.len = len + term.len;
-			delete temp.word;
-			temp.word = new char[temp.len + 1];
-			strcpy(temp.word, term.word);
-			strcat(temp.word, term.word);
-		}
-		return temp;
-	}//end
 
 
 
+    bool operator<=(const MyString& left, const MyString& right)
+    {
+        return strcmp(left.str, right.str) <= 0;
+    }
 
 
 
 
-	//inequlaity overloads
 
-	//overload <
-	bool operator< (const MyString x, const MyString y)
-	{//start
-		if (strcmp(x.word, y.word) < 0)
-		{
-			return true;
-		}
-		return false;
-	}//end
+    bool operator>=(const MyString& left, const MyString& right)
+    {
+        return strcmp(left.str, right.str) >= 0;
+    }
 
 
 
 
 
+    bool operator==(const MyString& left, const MyString& right)
+    {
+        return strcmp(left.str, right.str) == 0;
+    }
 
 
-	//overload <=
-	bool operator<= (const MyString x, const MyString y)
-	{//start
-		if (strcmp(x.word, y.word) < 0 || strcmp(x.word, y.word) == 0)
-		{
-			return true;
-		}
-		return false;
-	}//end
 
 
 
+    bool operator!=(const MyString& left, const MyString& right)
+    {
+        return strcmp(left.str, right.str) != 0;
+    }
 
 
 
-	//overload >
-	bool operator> (const MyString x, const MyString y)
-	{//start
-		if (strcmp(x.word, y.word) > 0)
-		{
-			return true;
-		}
-		return false;
-	}//end
 
 
 
 
+    MyString MyString::operator=(const MyString& right)
+    {
+        if (this !=& right){
+            delete [] str;
+            str = new char[strlen(right.str) + 1];
+            strcpy(str, right.str);
+        }
 
+        return *this;
+    }
 
-	//overload >=
-	bool operator>= (const MyString x, const MyString y)
-	{//start
-		if (strcmp(x.word, y.word) > 0 || strcmp(x.word, y.word) == 0)
-		{
-			return true;
-		}
-		return false;
-	}//end
 
 
 
 
 
 
-	//overload ==
-	bool operator== (const MyString x, const MyString y)
-	{//start
-		if (strcmp(x.word, y.word) == 0)
-		{
-			return true;
-		}
-		return false;
-	}//end
+    MyString operator+(const MyString& left, const MyString& right)
+    {
+        MyString tempStr;
+        delete [] tempStr.str;
+        tempStr.str = new char[strlen(left.str) + strlen(right.str) + 1];
+        strcpy(tempStr.str, left.str);
+        strcat(tempStr.str, right.str);
+        return tempStr;
+    }
 
 
 
 
 
 
-	//overload !=
-	bool operator!= (const MyString x, const MyString y)
-	{//start
-		if (strcmp(x.word, y.word) != 0)
-		{
-			return true;
-		}
-		return false;
-	}//end
+
+    MyString MyString::operator+=(const MyString& right)
+    {
+        *this = *this + right;
+        return *this;
+    }
+
+
+
+
+
+
+
+    int MyString::length() const
+    {
+        return strlen(str);
+    }
 }//end namespace
