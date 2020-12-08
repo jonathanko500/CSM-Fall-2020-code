@@ -22,17 +22,29 @@ bool isAPalindrome(MyString word,int start, int end);
 
 int main()
 {//start main
-	MyString x("Able was I, ere I saw Elba");
-	bool check;
-	check = isAPalindrome(x, 0, x.length() - 1);
-	if (check = true)
-	{
-		cout << x << " is a pali" << endl;
-	}
-	else
-	{
-		cout << x << " is not a pali" << endl;
-	}
+	bool again = true;
+	while (again == true)
+	{//start loop
+		MyString stop("quit");
+		MyString x;
+		cout << "Enter a string: ";
+		cin >> x;
+		if (x == stop)
+		{//check to see if loop should continue
+			again = false;
+		}
+		else
+		{//no quit then palindrome tester runs
+			if (isAPalindrome(x, 0, x.length() - 1))
+			{
+				cout << x << " is a pali" << endl;
+			}
+			else
+			{
+				cout << x << " is not a pali" << endl;
+			}
+		}		
+	}//end loop	
 }//end main
 
 
@@ -40,18 +52,44 @@ int main()
 
 
 
+
+//palindrome tester
 bool isAPalindrome(MyString word,int start, int end)
 {//start
 	if (start >= end)
-	{
+	{//base case
 		return true;
 	}
-		
 
-	if (word[start] != word[end])
+	if (toupper(word[start]) != toupper(word[end]))
 	{
+		//compare the elemetns of the array
+		//make all elements of array uppercase
 		return false;
 	}
-		
+	if (ispunct(word[start]) || ispunct(word[end]))
+	{//check and ignore punctuaion
+		return true;
+	}
+	/*
+	if (isspace(word[start])|| isspace(word[end]))
+	{//check and ignore space
+		return true;
+	}
+	*/
 	return isAPalindrome(word, start + 1, end - 1);
 }//end
+
+
+
+/*
+**********output********
+Enter a string: lo.ol
+lo.ol is a pali
+Enter a string: loL
+loL is a pali
+Enter a string: apple
+apple is not a pali
+Enter a string: quit
+
+*/
