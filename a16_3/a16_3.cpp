@@ -1,3 +1,12 @@
+/*
+Jonathan Ko
+12/7/2020
+CIS 278
+Assignment 16.3
+This program is called sort
+The compiler is given an array of array of numbers and 
+The compiler uses a recursive function that switches the order of the array from smallest to largest
+*/
 #include <iostream>
 
 using namespace std;
@@ -19,17 +28,15 @@ int main()
 		cout << numbers[i] << " ";
 		cout << endl;
 	}
-		
-		
-
-}//end 
+}//end
 
 
 
 
 
 
-//find smallest number in array of number
+
+//find index with the smallest number in array of number
 int smallIndex(int list[], int start, int end)
 {//start
 	if (start == end - 1)
@@ -41,7 +48,7 @@ int smallIndex(int list[], int start, int end)
 		return smallIndex(list, start, end - 1);
 	}
 	else
-	{//check to se if left side > right side
+	{//check to see if left side > right side
 		start++;
 		return smallIndex(list, start, end);
 	}
