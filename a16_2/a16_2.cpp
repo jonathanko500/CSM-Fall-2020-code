@@ -18,68 +18,54 @@ The compiler uses a recursive function that switches the order of the array into
 using namespace std;
 using namespace cs_mystring;
 
-bool isAPalindrome(MyString word,int start, int end);
+bool isaPalindrome(const MyString& str, int start, int end);
 
 int main()
-{//start main
-	bool again = true;
-	while (again == true)
-	{//start loop
-		MyString stop("quit");
-		MyString x;
-		cout << "Enter a string: ";
-		cin >> x;
-		if (x == stop)
-		{//check to see if loop should continue
-			again = false;
-		}
-		else
-		{//no quit then palindrome tester runs
-			if (isAPalindrome(x, 0, x.length() - 1))
-			{
-				cout << x << " is a pali" << endl;
-			}
-			else
-			{
-				cout << x << " is not a pali" << endl;
-			}
-		}		
-	}//end loop	
-}//end main
+{
+    MyString str;
+
+    str.read(cin, '\n');
+    while (str != "quit")
+    {
+        if (isaPalindrome(str, 0, str.length() - 1))
+        {
+            cout << str << " is a palindrome." << endl;
+        }
+        else
+        {
+            cout << str << " is not a palindrome." << endl;
+        }
+        str.read(cin, '\n');
+    }
+    cout << "end of program.";
+}
 
 
 
 
-
-
-
-//palindrome tester
-bool isAPalindrome(MyString word,int start, int end)
-{//start
-	if (start >= end)
-	{//base case
-		return true;
-	}
-
-	if (toupper(word[start]) != toupper(word[end]))
-	{
-		//compare the elemetns of the array
-		//make all elements of array uppercase
-		return false;
-	}
-	if (ispunct(word[start]) || ispunct(word[end]))
-	{//check and ignore punctuaion
-		return true;
-	}
-	/*
-	if (isspace(word[start])|| isspace(word[end]))
-	{//check and ignore space
-		return true;
-	}
-	*/
-	return isAPalindrome(word, start + 1, end - 1);
-}//end
-
+bool isaPalindrome(const MyString& str, int start, int end)
+{
+    if (start >= end)
+    {
+        return true;
+    }
+    else if (ispunct(str[start]) || isspace(str[start]))
+    {
+        return isaPalindrome(str, start + 1, end);
+    }
+    else if (ispunct(str[end]) || isspace(str[end]))
+    {
+        return isaPalindrome(str, start, end - 1);
+    }
+    else if (toupper(str[start]) != toupper(str[end]))
+    {
+        return false;
+    }
+    else
+    {
+        return isaPalindrome(str, start + 1, end - 1);
+    }
+}
 
 
 /*
